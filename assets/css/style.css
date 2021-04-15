@@ -1,9 +1,17 @@
+@font-face
+{
+    font-family: "Open";
+    src:    url(../font/BondiSans\ DEMO\ Rough\ TTF.ttf) format("truetype"),
+            url("../font/BondiSans\ DEMO\ Rough\ TTF.eot") format("eot");
+}
+
 body {
 }
 
 h1, h3
 {
     text-align:center;
+    font-family: Open;
 }
 h3
 {
