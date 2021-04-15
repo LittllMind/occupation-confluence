@@ -1,17 +1,6 @@
-@font-face
-{
-    font-family: "Open";
-    src:    url(../font/BondiSans\ DEMO\ Rough\ TTF.ttf) format("truetype"),
-            url("../font/BondiSans\ DEMO\ Rough\ TTF.eot") format("eot");
-}
-
-body {
-}
-
 h1, h3
 {
     text-align:center;
-    font-family: Open;
 }
 h3
 {
@@ -31,36 +20,15 @@ h3
     margin:auto;
 }
 
-.commentaire {
-  border: black solid thin;
-}
-
 a
 {
     text-decoration: none;
     color: blue;
 }
 
-.main
+@font-face
 {
-    border: #1818;
-    background-color: #1818;
-    height: 1200px;
-    width: 100%;
-}
-
-.header
-{
-    background-color: red;
-    border: thin solid black;
-    height: 10%;
-}
-
-
-.footer
-{
-    margin-top: 90%;
-    background-color: red;
-    border: thin solid black;
-
+    font-family: "Open";
+    src:    url(../font/BondiSans\ DEMO\ Rough\ TTF.ttf) format("truetype"),
+            url("../font/BondiSans\ DEMO\ Rough\ TTF.eot") format("eot");
 }
