@@ -1,5 +1,4 @@
 body {
-    background-color: #111111;
 }
 
 h1, h3
@@ -32,4 +31,28 @@ a
 {
     text-decoration: none;
     color: blue;
+}
+
+.main
+{
+    border: #1818;
+    background-color: #1818;
+    height: 1200px;
+    width: 100%;
+}
+
+.header
+{
+    background-color: red;
+    border: thin solid black;
+    height: 10%;
+}
+
+
+.footer
+{
+    margin-top: 90%;
+    background-color: red;
+    border: thin solid black;
+
 }
