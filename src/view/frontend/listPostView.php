@@ -4,8 +4,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<h1>Mon Blog</h1>
-<p>Derniers billets du blog</p>
 
 <?php
 while ($data = $posts->fetch()) {

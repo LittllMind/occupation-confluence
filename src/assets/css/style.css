@@ -1,12 +1,9 @@
-body
-{
-  background-color: #2F2E2E;
-}
+
 
 .navbar
 {
     display: flex;
-    background-color: #2F2E2E;
+    /* background-color: #2F2E2E; */
     justify-content: center;
     flex-direction: column;
     align-items: center;
