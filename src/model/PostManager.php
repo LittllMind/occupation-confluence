@@ -33,6 +33,19 @@ class PostManager extends BddManager
 
         return $post;
     }
+
+    public function postBlog($title, $content)
+    {
+        $bdd = $this->dbConnect();
+        $comments = $bdd->prepare(
+            'INSERT INTO billets(title, content, creation_date)
+            VALUES (?, ?, NOW())'
+        );
+
+        $affectedLines = $comments->execute(array($title, $content));
+
+        return $affectedLines;
+    }
     // private function dbConnect()
     // {
     //       $bdd = new PDO(

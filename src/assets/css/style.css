@@ -1,10 +1,10 @@
 
-/* @font-face
+@font-face
 {
-    font-family: "Open";
+    font-family: "standard";
     src:    url(../font/BondiSans\ DEMO\ Rough\ TTF.ttf) format("truetype"),
             url("../font/BondiSans\ DEMO\ Rough\ TTF.eot") format("eot");
-} */
+}
 
 
 @font-face
@@ -14,14 +14,28 @@
             url("assets/font/ufonts.com_u-s-a-condensed.eot") format("eot");
 }
 
+body
+{
+    background-color: #B4D2BA;
+}
+
+.container
+{
+
+}
+
+.row
+{
+
+}
+
 
 .navbar
 {
-    display: flex;
+    display: grid;
     background-color: #2F2E2E;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
 }
 
 .navbar img
@@ -31,15 +45,25 @@
 
 .navbar-links
 {
+    display: grid;
+    display: flex;
     height: 10%;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.navbar-links a
+{
+    font-family: "usa_condensed";
+    color: #DA3022;
 }
 
 .posts-list
 {
     border: thin dashed black;
     font-size: 2.5em;
-    font-family: "usa_condensed";
-    color: red;
+    color: #2E2D2D;
 }
 
 h1, h3
@@ -47,12 +71,12 @@ h1, h3
     text-align:center;
 }
 
-h3
+.news-top
 {
-    background-color: #99E1D9;
+    background-color: #2F2E2E;
     color: #7776BC;
     font-size:1.5em;
-    padding: 1%
+    padding: 0.01%
 }
 
 .news p
@@ -65,8 +89,8 @@ h3
 {
     width:70%;
     margin:auto;
-    border: black dashed thin;
     border-radius: 10px 10px 10px 10px;
+    margin-top: 1%;
 }
 
 .news-footer
@@ -74,10 +98,4 @@ h3
     display: flex;
     justify-content: space-between;
 
-}
-
-a
-{
-    text-decoration: none;
-    color: blue;
 }

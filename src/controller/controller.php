@@ -39,6 +39,24 @@ function addComment($postId, $author, $comment)
     }
 }
 
+function postForm()
+{
+    require('view/frontend/addBlogPost.php');
+}
+
+function addPostBlog($title, $content)
+{
+    $postManager = new PostManager();
+
+    $affectedLines = $postManager->postBlog($title, $content);
+
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter le post !');
+    } else {
+        header('Location: index.php');
+    }
+}
+
 //
 //
 // if (isset($_GET['id']) && $_GET['id'] > 0) {

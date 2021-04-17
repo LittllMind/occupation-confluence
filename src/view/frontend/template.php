@@ -5,7 +5,7 @@
   <head>
       <meta charset="UTF-8">
       <title><?= $title ?></title>
-      <link href="style.css" rel="stylesheet"/>
+      <link href="assets/css/style.css" rel="stylesheet"/>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link
       rel="stylesheet"
@@ -26,23 +26,18 @@
 
 
   <body>
-    <div class="container">
-      <div class="row">
 
 
-    <header>
       <div class="navbar">
         <img src="assets/images/logo-occupation.webp" alt="Occupation">
         <div class="navbar-links">
           <div class="posts-list">
-            <em> <a href="index.php?action=listPosts">BLOG</a>
+             <a href="index.php?action=listPosts">BLOG</a>
+             <a href="index.php?action=postForm">Add Blog Post</a>
           </div>
         </div>
 
       </div>
-    </header>
       <?= $content ?>
-    </div>
-  </div>
   </body>
 </hmtl>
