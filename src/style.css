@@ -22,6 +22,7 @@ body
 .container
 {   display: flex;
     justify-content: center;
+    background-color: #FFFAE3;
 }
 
 .row
@@ -49,7 +50,8 @@ body
     display: flex;
     height: 10%;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
+
 }
 
 
@@ -57,13 +59,14 @@ body
 {
     font-family: "usa_condensed";
     color: #DA3022;
+    padding: 1.5%;
 }
 
 .posts-list
 {
-    border: thin dashed black;
-    font-size: 2.5em;
+    font-size: 2em;
     color: #2E2D2D;
+    display: flex;
 }
 
 h1, h3
@@ -109,7 +112,6 @@ h1, h3
     margin:auto;
     border-radius: 10px 10px 10px 10px;
     margin-top: 1%;
-    font-family: "usa_condensed";
     font-size: 1.2em;
 }
 

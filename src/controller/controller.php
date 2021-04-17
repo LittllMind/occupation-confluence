@@ -5,6 +5,11 @@ require_once('model/CommentManager.php');
 use \OpenClassroom\Blog\Model\PostManager;
 use \OpenClassroom\Blog\Model\CommentManager;
 
+function index()
+{
+    require('view/frontend/acceuil.php');
+}
+
 function listPosts()
 {
     $postManager = new PostManager();

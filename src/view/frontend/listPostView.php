@@ -1,10 +1,6 @@
 <?php $title = 'Occupation confluence'; ?>
 
 <?php ob_start(); ?>
-<!DOCTYPE html>
-<html lang="fr">
-
-
 <?php
 while ($data = $posts->fetch()) {
     ?>

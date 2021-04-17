@@ -33,7 +33,8 @@
         <div class="navbar-links">
           <div class="posts-list">
              <a href="index.php?action=listPosts">BLOG</a>
-             <a href="index.php?action=postForm">Add Blog Post</a>
+             <a href="index.php?action=listPosts">GALERIE</a>
+             <!-- <a href="index.php?action=postForm">Add Blog Post</a> -->
           </div>
         </div>
 
