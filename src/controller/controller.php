@@ -10,6 +10,8 @@ function listPosts()
     $postManager = new PostManager();
     $posts = $postManager->getPosts();
 
+    $title = 'Occupation Confluence';
+
     require('view/frontend/listPostView.php');
 }
 

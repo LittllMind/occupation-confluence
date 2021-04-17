@@ -1,4 +1,4 @@
-<?php $title = 'Mon Big blog'; ?>
+<?php $title = 'Occupation confluence'; ?>
 
 <?php ob_start(); ?>
 <!DOCTYPE html>
@@ -9,16 +9,22 @@
 while ($data = $posts->fetch()) {
     ?>
     <div class="news">
-        <h3>
-        <?= htmlspecialchars($data['title']); ?>
-        <em>le <?= $data['creation_date_fr']; ?></em>
-        </h3>
+        <div class="news-top">
+          <h3>
+          <?= htmlspecialchars($data['title']); ?>
+          </h3>
+        </div>
 
 
         <p>
             <?=nl2br(htmlspecialchars($data['content']));?>
-            <br>
-            <em> <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a> </em>
+
+            <div class="news-footer">
+              <em>le <?= $data['creation_date_fr']; ?></em>
+
+              <em> <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a> </em>
+
+            </div>
         </p>
     </div>
 
