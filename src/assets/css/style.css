@@ -16,17 +16,17 @@
 
 body
 {
-    background-color: #B4D2BA;
+    background-color: #FFFAE3;
 }
 
 .container
-{
-
+{   display: flex;
+    justify-content: center;
 }
 
 .row
 {
-
+    justify-content: center;
 }
 
 
@@ -85,12 +85,33 @@ h1, h3
     margin-top:0px;
 }
 
+.post-content {
+    display: flex;
+}
+
+.post-content img
+{
+    width: 30%;
+}
+
+.post-content p
+{
+    width: 100%;
+    text-align: center;
+    padding: 1%;
+    height: 100%;
+}
+
 .news
 {
+    display: flex;
+    flex-direction: column;
     width:70%;
     margin:auto;
     border-radius: 10px 10px 10px 10px;
     margin-top: 1%;
+    font-family: "usa_condensed";
+    font-size: 1.2em;
 }
 
 .news-footer

@@ -14,18 +14,25 @@ while ($data = $posts->fetch()) {
           <?= htmlspecialchars($data['title']); ?>
           </h3>
         </div>
+        <div class="post-content">
+          <img src="<?= $data['image_url']?>" alt="image">
 
 
-        <p>
-            <?=nl2br(htmlspecialchars($data['content']));?>
 
-            <div class="news-footer">
-              <em>le <?= $data['creation_date_fr']; ?></em>
+          <p>
+              <?=nl2br(htmlspecialchars($data['content']));?>
 
-              <em> <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a> </em>
 
-            </div>
-        </p>
+          </p>
+
+        </div>
+        <div class="news-footer">
+          <em>le <?= $data['creation_date_fr']; ?></em>
+
+          <em> <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a> </em>
+
+        </div>
+
     </div>
 
     <?php

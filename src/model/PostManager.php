@@ -9,7 +9,7 @@ class PostManager extends BddManager
     {
         $bdd = $this->dbConnect();
         $req = $bdd->query(
-            'SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\')
+            'SELECT id, title, content, image_url, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\')
             AS creation_date_fr
             FROM billets
             ORDER BY creation_date
@@ -34,15 +34,15 @@ class PostManager extends BddManager
         return $post;
     }
 
-    public function postBlog($title, $content)
+    public function postBlog($title, $content, $image_url)
     {
         $bdd = $this->dbConnect();
         $comments = $bdd->prepare(
-            'INSERT INTO billets(title, content, creation_date)
-            VALUES (?, ?, NOW())'
+            'INSERT INTO billets(title, content, image_url, creation_date)
+            VALUES (?, ?, ?, NOW())'
         );
 
-        $affectedLines = $comments->execute(array($title, $content));
+        $affectedLines = $comments->execute(array($title, $content, $image_url));
 
         return $affectedLines;
     }
