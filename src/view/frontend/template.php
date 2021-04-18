@@ -22,6 +22,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
       integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
       crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
 
 
@@ -29,24 +31,31 @@
 
 
       <div class="navbar">
+
         <img src="assets/images/logo-occupation.webp" alt="Occupation">
+
         <div class="container">
           <div class="row">
             <br/><br/>
             <div class="col-md-12">
 
 
-    </div>
+            </div>
 
 
-</div>
-</div>
+          </div>
+        </div>
 
         <div class="navbar-links">
           <div class="posts-list">
-             <button type="button" name="button" class="btn"> <a href="index.php?action=index">HOME</a>  </button>
-             <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">BLOG</a>  </button>
-             <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">GALERIE</a>  </button>
+              <button type="button" name="button" class="btn"> <a href="index.php?action=index">HOME</a>  </button>
+              <a href="http://www.facebook.com/occupationoperaconfluence/" target="_blank" class="btn-social btn-facebook"><i class="fa fa-facebook"></i></a>
+              <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">BLOG</a>  </button>
+              <a href="http://instagram.com/occupationoperaconfluence?igshid=1apak4gnteq71" tssarget="_blank" class="btn-social btn-instagram"><i class="fa fa-instagram"></i></a>
+              <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">GALERIE</a>  </button>
+
+
+
 
              <!-- <a href="index.php?action=postForm">Add Blog Post</a> -->
 
@@ -54,9 +63,9 @@
         </div>
 
       </div>
-      <a href="http://scripteden.com/download/eden-ui/" target="_blank" class="btn-social btn-facebook"><i class="fa fa-facebook"></i></a>
-      <a href="http://scripteden.com/download/eden-ui/" target="_blank" class="btn-social btn-instagram"><i class="fa fa-instagram"></i></a>
-      <a href="http://scripteden.com/download/eden-ui/" target="_blank" class="btn-social btn-twitter"><i class="fa fa-twitter"></i></a>
+
+
+      <audio preload="auto" controls style="width:100%; height:40px;" src="https://occupationconfluence.radio12345.com"> </audio>
       <?= $content ?>
       <footer>
 

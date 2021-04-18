@@ -23,13 +23,14 @@
 
 body
 {
-    background-color: #FFFAE3;
+    background-color: #B0C0BC;
 }
 
 .container
-{   display: flex;
+{
+    display: flex;
     justify-content: center;
-    background-color: #FFFAE3;
+    background-color: #B0C0BC;
 }
 
 .row
@@ -63,14 +64,19 @@ body
 
 .manifest ul
 {
-    text-align: left;
-    margin-left: 20%;
+    text-align: center;
+    border: thin black solid;
+}
+
+.manifest li
+{
+
 }
 
 .navbar
 {
     display: grid;
-    background-color: #2F2E2E;
+    background-color: #35588E;
     justify-content: center;
     flex-direction: column;
 }
@@ -87,22 +93,27 @@ body
     height: 10%;
     width: 100%;
     justify-content: space-around;
-
 }
 
 
 .navbar-links a
 {
-    font-family: "usa_condensed";
+    font-family: "valentine";
     color: #DA3022;
     padding: 1.5%;
+    font-size: 1.5em;
+    padding: 7%;
+    padding-right: 2%;
 }
 
 .posts-list
 {
-    font-size: 3em;
     color: #2E2D2D;
     display: flex;
+    background-color: #191A1A;
+    border-radius: 20px 20px 20px 20px;
+    width: 415px;
+    justify-content: space-around;
 }
 
 h1, h3

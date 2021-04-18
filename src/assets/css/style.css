@@ -27,9 +27,10 @@ body
 }
 
 .container
-{   display: flex;
+{
+    /* display: flex;
     justify-content: center;
-    background-color: #FFFAE3;
+    background-color: #FFFAE3; */
 }
 
 .row
@@ -63,21 +64,22 @@ body
 
 .manifest ul
 {
-    text-align: left;
+    text-align: center;
     margin-left: 20%;
 }
 
 .navbar
 {
     display: grid;
-    background-color: #2F2E2E;
+    background-color: #34578D;
+    background-image: url("assets/css/bleu.PNG");
     justify-content: center;
     flex-direction: column;
 }
 
 .navbar img
 {
-    width: 10%;
+    width: 15%;
 }
 
 .navbar-links
