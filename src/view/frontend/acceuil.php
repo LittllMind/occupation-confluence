@@ -2,27 +2,11 @@
 
 <?php ob_start(); ?>
 
-<div class="container">
-  <div class="row">
-    <form action="index.php?action=addPostBlog" method="post">
-        <div class="form-group">
-            <label for="title">titre</label><br />
-            <input class="form-control" type="text" id="title" name="title" />
-        </div>
-        <div class="form-group">
-            <label for="content">Contenu</label><br />
-            <textarea class="form-control" id="content" name="content"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="image_url">image Url</label><br />
-            <textarea class="form-control" id="image_url" name="image_url"></textarea>
-        </div>
-        <div>
-            <button class="btn btn-success" type="submit"> Valider </button>
-        </div>
-    </form>
-  </div>
+<div class="main-home" >
+  <img style:"width: 1000px" src="assets/images/Occupation.jpeg" alt="Occupation">
 </div>
+
+<img style:"width: 1000px" src="https://i.postimg.cc/4dZr3HqH/occupation-confluence.jpg" alt="Occupation">
 
 
 

@@ -32,6 +32,8 @@ try {
             } else {
                 throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
+        } elseif ($_GET['action'] == 'index') {
+            index();
         }
     } else {
         index();

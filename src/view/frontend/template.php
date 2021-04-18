@@ -32,9 +32,11 @@
         <img src="assets/images/logo-occupation.webp" alt="Occupation">
         <div class="navbar-links">
           <div class="posts-list">
-             <a href="index.php?action=listPosts">BLOG</a>
-             <a href="index.php?action=listPosts">GALERIE</a>
+             <button type="button" name="button" class="btn"> <a href="index.php?action=index">HOME</a>  </button>
+             <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">BLOG</a>  </button>
+             <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">GALERIE</a>  </button>
              <!-- <a href="index.php?action=postForm">Add Blog Post</a> -->
+
           </div>
         </div>
 
