@@ -9,7 +9,7 @@ class PostManager extends BddManager
     {
         $bdd = $this->dbConnect();
         $req = $bdd->query(
-            'SELECT id, title, content, image_url, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\')
+            'SELECT id, title, content, image_url, DATE_FORMAT(creation_date, \'%d/%m/%Y\')
             AS creation_date_fr
             FROM billets
             ORDER BY creation_date

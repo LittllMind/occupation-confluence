@@ -1,13 +1,26 @@
 <?php
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/ImageManager.php');
 
 use \OpenClassroom\Blog\Model\PostManager;
 use \OpenClassroom\Blog\Model\CommentManager;
+use \OpenClassroom\Blog\Model\ImageManager;
 
 function index()
 {
     require('view/frontend/acceuil.php');
+}
+
+function galerie()
+{
+    $postManager = new PostManager();
+    $posts = $postManager->getPosts();
+
+    $imageManager = new ImageManager();
+    $images = $imageManager->getImages();
+
+    require('view/frontend/galerie.php');
 }
 
 function listPosts()
@@ -57,6 +70,24 @@ function addPostBlog($title, $content, $image_url)
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le post !');
+    } else {
+        header('Location: index.php');
+    }
+}
+
+function imageForm()
+{
+    require('view/frontend/addImage.php');
+}
+
+function addImage($title, $image_url, $creation_date)
+{
+    $imageManager = new ImageManager();
+
+    $affectedLines = $imageManager->postImage($title, $image_url, $creation_date);
+
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter l\'image !');
     } else {
         header('Location: index.php');
     }

@@ -48,28 +48,39 @@ body
 
 .manifest
 {
-    width: 100%;
-    justify-content: center;
+    width: 75%;
     font-family: "lancelot";
-    font-size: 1.7em;
+    font-size: 1.5em;
     text-align: center;
+    margin: auto;
+
 }
 
 .manifest h1
 {
     /* text-decoration: underline; */
-    font-family: "valentine";
-    margin: 1.5%;
+    font-family: "lancelot";
+    margin: 3%;
+
+}
+
+.manisfest p
+{
+  text-align: center;
+  list-style: none;
+  box-shadow: 12px 12px 2px 1px #C2EABA;
 }
 
 .manifest ul
 {
     text-align: center;
-    border: thin black solid;
+    list-style: none;
+    box-shadow: 12px 12px 2px 1px #C2EABA;
 }
 
 .manifest li
 {
+  background-color: #E6EFE9;
 
 }
 
@@ -123,10 +134,18 @@ h1, h3
 
 .news-top
 {
-    background-color: #2F2E2E;
+    background-color: #191A1A;
     color: #7776BC;
     font-size:1.5em;
-    padding: 0.01%
+    padding: 0.01%;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    margin: 1%;
+}
+
+.news img
+{
+  width: 50%;
 }
 
 .news p
@@ -155,6 +174,7 @@ h1, h3
 {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width:70%;
     margin:auto;
     border-radius: 10px 10px 10px 10px;
@@ -167,4 +187,26 @@ h1, h3
     display: flex;
     justify-content: space-between;
 
+}
+
+.galerie
+{
+    padding: 2%;
+}
+
+footer
+{
+    text-align: center;
+}
+
+.footer
+{
+  width: 100%;
+  font-family: "lancelot";
+  font-size: 1em;
+  text-align: center;
+  margin: auto;
+  background-color: #35588E;
+  margin-top: 10%;
+  color: #E6EFE9;
 }

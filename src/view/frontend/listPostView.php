@@ -10,22 +10,18 @@ while ($data = $posts->fetch()) {
           <?= htmlspecialchars($data['title']); ?>
           </h3>
         </div>
+        <img src="<?= $data['image_url']?>" alt="image">
         <div class="post-content">
-          <img src="<?= $data['image_url']?>" alt="image">
-
-
 
           <p>
               <?=nl2br(htmlspecialchars($data['content']));?>
-
-
           </p>
 
         </div>
         <div class="news-footer">
           <em>le <?= $data['creation_date_fr']; ?></em>
 
-          <em> <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a> </em>
+          <!-- <em> <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a> </em> -->
 
         </div>
 

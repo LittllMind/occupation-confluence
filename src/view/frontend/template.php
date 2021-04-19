@@ -34,17 +34,6 @@
 
         <img src="assets/images/logo-occupation.webp" alt="Occupation">
 
-        <div class="container">
-          <div class="row">
-            <br/><br/>
-            <div class="col-md-12">
-
-
-            </div>
-
-
-          </div>
-        </div>
 
         <div class="navbar-links">
           <div class="posts-list">
@@ -52,7 +41,7 @@
               <a href="http://www.facebook.com/occupationoperaconfluence/" target="_blank" class="btn-social btn-facebook"><i class="fa fa-facebook"></i></a>
               <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">BLOG</a>  </button>
               <a href="http://instagram.com/occupationoperaconfluence?igshid=1apak4gnteq71" tssarget="_blank" class="btn-social btn-instagram"><i class="fa fa-instagram"></i></a>
-              <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">GALERIE</a>  </button>
+              <button type="button" name="button" class="btn"> <a href="index.php?action=galerie">GALERIE</a>  </button>
 
 
 
@@ -63,11 +52,19 @@
         </div>
 
       </div>
-
-
-      <audio preload="auto" controls style="width:100%; height:40px;" src="https://occupationconfluence.radio12345.com"> </audio>
+      <audio preload="auto" controls style="width:100%; height:50px;" src="https://occupationconfluence.radio12345.com"> </audio>
       <?= $content ?>
       <footer>
+        <div class="footer">
+          <h4>Occupation de l'Opéra Confluence</h4>
+          <p>Nous occuperons les lieux aussi longtemps que necessaire et pour ce faire, nous avons besoin de l'aide de tous !</p>
+          <strong>
+            <p>Des assemblées générales seront organisées les <br>
+                Mercredi, Vendredi, Dimanche à 14h30.
+            </p>
+          </strong>
+          <h4>Ce que nous défendons, nous le défendons pour tous.tes</h4>
+        </div>
 
       </footer>
   </body>
