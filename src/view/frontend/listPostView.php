@@ -7,10 +7,13 @@ while ($data = $posts->fetch()) {
     <div class="news">
         <div class="news-top">
           <h3>
-          <?= htmlspecialchars($data['title']); ?>
+            <?= htmlspecialchars($data['title']); ?>
+
           </h3>
         </div>
+        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
         <img src="<?= $data['image_url']?>" alt="image">
+        </a>
         <div class="post-content">
 
           <p>
@@ -21,7 +24,7 @@ while ($data = $posts->fetch()) {
         <div class="news-footer">
           <em>le <?= $data['creation_date_fr']; ?></em>
 
-          <!-- <em> <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a> </em> -->
+          <em>  </em>
 
         </div>
 
