@@ -34,15 +34,15 @@ class PostManager extends BddManager
         return $post;
     }
 
-    public function postBlog($title, $content, $image_url)
+    public function postBlog($title, $content, $image_url, $creation_date)
     {
         $bdd = $this->dbConnect();
         $comments = $bdd->prepare(
             'INSERT INTO billets(title, content, image_url, creation_date)
-            VALUES (?, ?, ?, NOW())'
+            VALUES (?, ?, ?, ?)'
         );
 
-        $affectedLines = $comments->execute(array($title, $content, $image_url));
+        $affectedLines = $comments->execute(array($title, $content, $image_url, $creation_date));
 
         return $affectedLines;
     }

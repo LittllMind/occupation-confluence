@@ -27,8 +27,8 @@ try {
         } elseif ($_GET['action'] == 'postForm') {
             postForm();
         } elseif ($_GET['action'] == 'addPostBlog') {
-            if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['image_url'])) {
-                addPostBlog($_POST['title'], $_POST['content'], $_POST['image_url']);
+            if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['image_url']) && !empty($_POST['creation_date'])) {
+                addPostBlog($_POST['title'], $_POST['content'], $_POST['image_url'], $_POST['creation_date']);
             } else {
                 throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }

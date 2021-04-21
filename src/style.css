@@ -26,6 +26,30 @@ body
     background-color: #B0C0BC;
 }
 
+.lien-radio
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #1B1B1B;
+}
+
+.lien-radio button
+{
+    width: 50%;
+    height: 50px;
+    background-color: #1B1B1B;
+    color: #E6EFE9;
+    height: 50px;
+    text-decoration: none;
+    border: #1B1B1B thin solid
+}
+
+.lien-radio a
+{
+    text-decoration: none;
+}
+
 .container
 {
     display: flex;
@@ -75,7 +99,7 @@ body
 {
     text-align: center;
     list-style: none;
-    box-shadow: 12px 12px 2px 1px #C2EABA;
+    box-shadow: 12px 12px 2px 1px #BEDCFE;
 }
 
 .manifest li

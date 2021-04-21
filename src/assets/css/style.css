@@ -26,6 +26,12 @@ body
     background-color: #B0C0BC;
 }
 
+.lien-radio
+{
+    margin-left: 20%;
+    display: flex;
+}
+
 .container
 {
     display: flex;
@@ -75,7 +81,7 @@ body
 {
     text-align: center;
     list-style: none;
-    box-shadow: 12px 12px 2px 1px #C2EABA;
+    box-shadow: 12px 12px 2px 1px #BEDCFE;
 }
 
 .manifest li
@@ -134,15 +140,18 @@ h1, h3
 
 .news-top
 {
-    background-color: #2F2E2E;
+    background-color: #191A1A;
     color: #7776BC;
     font-size:1.5em;
-    padding: 0.01%
+    padding: 0.01%;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    margin: 1%;
 }
 
 .news img
 {
-  width: 30%;
+  width: 50%;
 }
 
 .news p
@@ -171,6 +180,7 @@ h1, h3
 {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width:70%;
     margin:auto;
     border-radius: 10px 10px 10px 10px;
@@ -183,6 +193,11 @@ h1, h3
     display: flex;
     justify-content: space-between;
 
+}
+
+.galerie
+{
+    padding: 2%;
 }
 
 footer

@@ -62,11 +62,11 @@ function postForm()
     require('view/frontend/addBlogPost.php');
 }
 
-function addPostBlog($title, $content, $image_url)
+function addPostBlog($title, $content, $image_url, $creation_date)
 {
     $postManager = new PostManager();
 
-    $affectedLines = $postManager->postBlog($title, $content, $image_url);
+    $affectedLines = $postManager->postBlog($title, $content, $image_url, $creation_date);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le post !');
