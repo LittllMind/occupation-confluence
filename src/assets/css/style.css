@@ -28,8 +28,26 @@ body
 
 .lien-radio
 {
-    margin-left: 20%;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #1B1B1B;
+}
+
+.lien-radio button
+{
+    width: 50%;
+    height: 50px;
+    background-color: #1B1B1B;
+    color: #E6EFE9;
+    height: 50px;
+    text-decoration: none;
+    border: #1B1B1B thin solid
+}
+
+.lien-radio a
+{
+    text-decoration: none;
 }
 
 .container
@@ -42,6 +60,8 @@ body
 .row
 {
     justify-content: center;
+    background-color: #B0C0BC;
+
 }
 
 .main-home
@@ -141,17 +161,20 @@ h1, h3
 .news-top
 {
     background-color: #191A1A;
-    color: #7776BC;
+    color: #D73123;
     font-size:1.5em;
     padding: 0.01%;
     width: 100%;
     border-radius: 10px 10px 10px 10px;
     margin: 1%;
+    font-family: "valentine";
+    padding: 0.5%;
 }
 
 .news img
 {
-  width: 50%;
+    justify-content: middle;
+    width: 100%;
 }
 
 .news p
