@@ -3,14 +3,14 @@
 {
     font-family: "valentine";
     src:    url(assets/font/Valentine\ Monster.ttf) format("truetype"),
-            url("../font/Valentine\ Monster.eot") format("eot");
+            url("assets/font/Valentine\ Monster.eot") format("eot");
 }
 
 @font-face
 {
     font-family: "lancelot";
     src:    url(assets/font/Lancelot-Regular.ttf) format("truetype"),
-            url("../font/Lancelot-Regular.eot") format("eot");
+            url("assets/font/Lancelot-Regular.eot") format("eot");
 }
 
 
@@ -149,7 +149,7 @@ body
     display: flex;
     background-color: #191A1A;
     border-radius: 20px 20px 20px 20px;
-    width: 415px;
+    width: 445px;
     justify-content: space-around;
 }
 

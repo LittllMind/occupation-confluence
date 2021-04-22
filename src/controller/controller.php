@@ -14,16 +14,7 @@ function index()
     require('view/frontend/acceuil.php');
 }
 
-function galerie()
-{
-    $postManager = new PostManager();
-    $posts = $postManager->getPosts();
-
-    $imageManager = new ImageManager();
-    $images = $imageManager->getImages();
-
-    require('view/frontend/galerie.php');
-}
+// ------------------------ LIST VIEW
 
 function listPosts()
 {
@@ -34,6 +25,47 @@ function listPosts()
 
     require('view/frontend/listPostView.php');
 }
+
+function listImage()
+{
+    $postManager = new PostManager();
+    $posts = $postManager->getPosts();
+
+    $imageManager = new ImageManager();
+    $images = $imageManager->getImages();
+
+    require('view/frontend/listImageView.php');
+}
+
+function listVideo()
+{
+    $videoManager = new VideoManager();
+    $videos = $videoManager->getVideos();
+
+    $title = 'Occupation Confluence';
+
+    require('view/frontend/listVideoView.php');
+}
+
+// ------------------------ FORM CONTENT
+
+function postForm()
+{
+    require('view/frontend/addBlogPost.php');
+}
+
+function imageForm()
+{
+    require('view/frontend/addImage.php');
+}
+
+function videoForm()
+{
+    require('view/frontend/addVideo.php');
+}
+
+// ------------------------ ID VIEW
+
 
 function post()
 {
@@ -46,23 +78,7 @@ function post()
     require('view/frontend/postView.php');
 }
 
-function addComment($postId, $author, $comment)
-{
-    $commentManager = new CommentManager();
-
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
-
-    if ($affectedLines === false) {
-        throw new Exception('Impossible d\'ajouter le commentaire !');
-    } else {
-        header('Location: index.php?action=post&id=' . $postId);
-    }
-}
-
-function postForm()
-{
-    require('view/frontend/addBlogPost.php');
-}
+// ------------------------ ADD CONTENT
 
 function addPostBlog($title, $content, $image_url, $creation_date)
 {
@@ -75,11 +91,6 @@ function addPostBlog($title, $content, $image_url, $creation_date)
     } else {
         header('Location: index.php');
     }
-}
-
-function imageForm()
-{
-    require('view/frontend/addImage.php');
 }
 
 function addImage($title, $image_url, $creation_date)
@@ -95,15 +106,47 @@ function addImage($title, $image_url, $creation_date)
     }
 }
 
-function listVideo()
+function addVideo($title, $content, $url, $creation_date)
 {
     $videoManager = new VideoManager();
-    $videos = $videoManager->getVideos();
 
-    $title = 'Occupation Confluence';
+    $affectedLines = $videoManager->postVideo($title, $content, $url, $creation_date);
 
-    require('view/frontend/listVideoView.php');
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter la vidéo !');
+    } else {
+        header('Location: index.php');
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function addComment($postId, $author, $comment)
+// {
+//     $commentManager = new CommentManager();
+//     $affectedLines = $commentManager->postComment($postId, $author, $comment);
+//     if ($affectedLines === false) {
+//         throw new Exception('Impossible d\'ajouter le commentaire !');
+//     } else {
+//         header('Location: index.php?action=post&id=' . $postId);
+//     }
+// }
+
 
 //
 //

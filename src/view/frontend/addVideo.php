@@ -1,10 +1,10 @@
-<?php $title = 'Ajouter un post'; ?>
+<?php $title = 'Ajouter une Vidéo'; ?>
 
 <?php ob_start(); ?>
 
 <div class="container">
   <div class="row">
-    <form action="index.php?action=addPostBlog" method="post">
+    <form action="index.php?action=addVideo" method="post">
         <div class="form-group">
             <label for="title">titre</label><br />
             <input class="form-control" type="text" id="title" name="title" />

@@ -42,12 +42,7 @@
               <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">BLOG</a>  </button>
               <button type="button" name="button" class="btn"> <a href="index.php?action=listVideo">VIDEOS</a>  </button>
               <a href="http://instagram.com/occupationoperaconfluence?igshid=1apak4gnteq71" tssarget="_blank" class="btn-social btn-instagram"><i class="fa fa-instagram"></i></a>
-              <button type="button" name="button" class="btn"> <a href="index.php?action=galerie">GALERIE</a>  </button>
-
-
-
-
-             <!-- <a href="index.php?action=postForm">Add Blog Post</a> -->
+              <button type="button" name="button" class="btn"> <a href="index.php?action=listImage">GALERIE</a>  </button>
 
           </div>
         </div>

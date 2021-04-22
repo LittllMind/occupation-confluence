@@ -13,7 +13,6 @@ while ($data = $videos->fetch()) {
           </h3>
         </div>
         <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
-        <img src="<?= $data['url']?>" alt="image">
 
         <iframe id="lbry-iframe"
                 width="560"
