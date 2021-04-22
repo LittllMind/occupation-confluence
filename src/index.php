@@ -38,6 +38,8 @@ try {
             galerie();
         } elseif ($_GET['action'] == 'postImage') {
             imageForm();
+        } elseif ($_GET['action'] == 'listVideo') {
+            listVideo();
         } elseif ($_GET['action'] == 'addImage') {
             if (!empty($_POST['title']) && !empty($_POST['image_url']) && !empty($_POST['creation_date'])) {
                 addImage($_POST['title'], $_POST['image_url'], $_POST['creation_date']);

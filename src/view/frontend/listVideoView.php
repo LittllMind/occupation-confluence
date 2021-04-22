@@ -1,8 +1,9 @@
-<?php $title = 'Occupation confluence'; ?>
+
+<?php $title = 'Videos'; ?>
 
 <?php ob_start(); ?>
 <?php
-while ($data = $posts->fetch()) {
+while ($data = $videos->fetch()) {
     ?>
     <div class="news">
         <div class="news-top">
@@ -12,7 +13,14 @@ while ($data = $posts->fetch()) {
           </h3>
         </div>
         <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
-        <img src="<?= $data['image_url']?>" alt="image">
+        <img src="<?= $data['url']?>" alt="image">
+
+        <iframe id="lbry-iframe"
+                width="560"
+                height="315"
+                src="<?= $data['url']?>"
+                allowfullscreen>
+        </iframe>
         </a>
         <div class="post-content">
 
@@ -32,7 +40,7 @@ while ($data = $posts->fetch()) {
 
     <?php
 }
-    $posts->closeCursor();
+    $videos->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 

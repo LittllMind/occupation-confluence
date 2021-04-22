@@ -2,10 +2,12 @@
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/ImageManager.php');
+require_once('model/VideoManager.php');
 
 use \OpenClassroom\Blog\Model\PostManager;
 use \OpenClassroom\Blog\Model\CommentManager;
 use \OpenClassroom\Blog\Model\ImageManager;
+use \OpenClassroom\Blog\Model\VideoManager;
 
 function index()
 {
@@ -91,6 +93,16 @@ function addImage($title, $image_url, $creation_date)
     } else {
         header('Location: index.php');
     }
+}
+
+function listVideo()
+{
+    $videoManager = new VideoManager();
+    $videos = $videoManager->getVideos();
+
+    $title = 'Occupation Confluence';
+
+    require('view/frontend/listVideoView.php');
 }
 
 //

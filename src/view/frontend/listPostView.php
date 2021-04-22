@@ -1,4 +1,5 @@
-<?php $title = 'Occupation confluence'; ?>
+
+<?php $title = 'Blog'; ?>
 
 <?php ob_start(); ?>
 <?php
