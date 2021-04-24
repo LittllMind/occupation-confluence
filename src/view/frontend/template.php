@@ -23,6 +23,7 @@
       integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
       crossorigin="anonymous" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="icon" type="image/webp" sizes="16x16" href="assets/images/logo-occupation.webp">
 
   </head>
 
@@ -59,7 +60,7 @@
           <h4>Occupation de l'Opéra Confluence</h4>
           <p>Nous occuperons les lieux aussi longtemps que necessaire et pour ce faire, nous avons besoin de l'aide de tous !</p>
           <strong>
-            <p>Des assemblées générales seront organisées les <br>
+            <p>Des assemblées générales sont organisées les <br>
                 Mercredi, Vendredi, Dimanche à 14h30.
             </p>
           </strong>

@@ -5,13 +5,14 @@ require('controller/controller.php');
 
 
 
-if (empty($action)) {
-    $action = 'index';
-} else {
-    $action = $_GET['action'];
-}
+
 
 try {
+    if (empty($_GET['action'])) {
+        $action = 'index';
+    } else {
+        $action = $_GET['action'];
+    }
     switch ($action) {
         // ----------- LIST VIEWS
         case 'index':

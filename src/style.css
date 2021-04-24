@@ -184,6 +184,7 @@ h1, h3
 
 .post-content {
     display: flex;
+    width: 100%;
 }
 
 .post-content img

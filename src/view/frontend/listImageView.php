@@ -1,4 +1,4 @@
-<?php $title = 'Galerie photo'; ?>
+<?php $title = 'Galerie'; ?>
 
 <?php ob_start(); ?>
 <div class="galerie">

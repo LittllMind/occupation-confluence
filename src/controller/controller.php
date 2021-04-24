@@ -11,6 +11,7 @@ use \OpenClassroom\Blog\Model\VideoManager;
 
 function index()
 {
+    $title = 'Occupation Opéra Confluence';
     require('view/frontend/acceuil.php');
 }
 
@@ -21,7 +22,7 @@ function listPosts()
     $postManager = new PostManager();
     $posts = $postManager->getPosts();
 
-    $title = 'Occupation Confluence';
+    $title = 'Occupation Opéra Confluence';
 
     require('view/frontend/listPostView.php');
 }
