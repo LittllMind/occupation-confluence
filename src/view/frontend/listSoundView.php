@@ -1,5 +1,5 @@
 
-<?php $title = 'Videos'; ?>
+<?php $title = 'Web radio'; ?>
 
 <?php ob_start(); ?>
 <?php
@@ -12,15 +12,15 @@ while ($data = $sound->fetch()) {
 
           </h3>
         </div>
-        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
+        <!-- <a href="index.php?action=post&amp;id=<?= $data['id'] ?>"> -->
 
-        <iframe width="560"
+        <iframe width="700"
                 height="315"
                 scrolling="no"
                 frameborder="no"
                 allow="autoplay"
                 src="<?= $data['url']?>">
-              </iframe>
+        </iframe>
         <div class="post-content">
 
           <p>
@@ -39,7 +39,7 @@ while ($data = $sound->fetch()) {
 
     <?php
 }
-    $videos->closeCursor();
+    $sound->closeCursor();
 ?>
 <?php $content = ob_get_clean(); ?>
 

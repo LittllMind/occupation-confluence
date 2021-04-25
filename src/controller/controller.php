@@ -78,6 +78,12 @@ function videoForm()
     require('view/frontend/addVideo.php');
 }
 
+function soundForm()
+{
+    require('view/frontend/addSound.php');
+}
+
+
 // ------------------------ ID VIEW
 
 
@@ -125,6 +131,19 @@ function addVideo($title, $content, $url, $creation_date)
     $videoManager = new VideoManager();
 
     $affectedLines = $videoManager->postVideo($title, $content, $url, $creation_date);
+
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter la vidéo !');
+    } else {
+        header('Location: index.php');
+    }
+}
+
+function addSound($title, $content, $url, $creation_date)
+{
+    $soundManager = new SoundManager();
+
+    $affectedLines = $soundManager->postSound($title, $content, $url, $creation_date);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter la vidéo !');
