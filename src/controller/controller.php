@@ -3,11 +3,13 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/ImageManager.php');
 require_once('model/VideoManager.php');
+require_once('model/SoundManager.php');
 
 use \OpenClassroom\Blog\Model\PostManager;
 use \OpenClassroom\Blog\Model\CommentManager;
 use \OpenClassroom\Blog\Model\ImageManager;
 use \OpenClassroom\Blog\Model\VideoManager;
+use \OpenClassroom\Blog\Model\SoundManager;
 
 function index()
 {
@@ -47,6 +49,17 @@ function listVideo()
 
     require('view/frontend/listVideoView.php');
 }
+
+function listSound()
+{
+    $soundManager = new SoundManager();
+    $sound = $soundManager->getSounds();
+
+    $title = 'Occupation Confluence';
+
+    require('view/frontend/listSoundView.php');
+}
+
 
 // ------------------------ FORM CONTENT
 

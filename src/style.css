@@ -143,8 +143,8 @@ body
     display: flex;
     background-color: #191A1A;
     justify-content: space-around;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 h1, h3

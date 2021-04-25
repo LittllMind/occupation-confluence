@@ -27,6 +27,9 @@ try {
         case 'listVideo':
             listVideo();
             break;
+        case 'listSound':
+            listSound();
+            break;
         // ------------ FORMS CONTENT
         case 'postForm':
             postForm();
@@ -36,6 +39,9 @@ try {
             break;
         case 'postVideo':
             videoForm();
+            break;
+        case 'postSound':
+            postSound();
             break;
         // ------------ ADD CONTENT
         case 'addPostBlog':
@@ -53,6 +59,13 @@ try {
             }
             break;
         case 'addVideo':
+            if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['url']) && !empty($_POST['creation_date'])) {
+                addVideo($_POST['title'], $_POST['content'], $_POST['url'], $_POST['creation_date']);
+            } else {
+                throw new Exception('Erreur : tous les champs ne sont pas remplis !');
+            }
+            break;
+        case 'addSound':
             if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['url']) && !empty($_POST['creation_date'])) {
                 addVideo($_POST['title'], $_POST['content'], $_POST['url'], $_POST['creation_date']);
             } else {
