@@ -34,7 +34,7 @@
       <div class="navbar">
         <picture>
           <source srcset="assets/images/logo-occupation.webp" type="image/webp" style:"width: 50%">
-          <source srcset="assets/images/logo-occupation.jpg" type="image/jpg">
+          <source srcset="assets/images/logo-occupation.jpg" type="image/jpg"  style:"padding: auto">
           <img src="assets/images/logo-occupation.jpg">
         </picture>
 
