@@ -52,9 +52,10 @@ body
 
 .container
 {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     background-color: #B0C0BC;
+    width: 100%;
 }
 
 .row
@@ -128,7 +129,7 @@ body
     display: grid;
     display: flex;
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     justify-content: space-around;
 }
 
@@ -149,7 +150,7 @@ body
     display: flex;
     background-color: #191A1A;
     border-radius: 20px 20px 20px 20px;
-    width: 445px;
+    /* width: 445px; */
     justify-content: space-around;
 }
 
