@@ -10,14 +10,6 @@
     }
       $images->closeCursor();
 
-    while ($data = $posts->fetch()) {
-        ?>
-      <img src="<?= $data['image_url']?>" alt="image">
-        <?php
-    }
-      $posts->closeCursor();
-
-
     ?>
 </div>
 
