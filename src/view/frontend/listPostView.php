@@ -7,10 +7,12 @@ while ($data = $posts->fetch()) {
     ?>
     <div class="news">
         <div class="news-top">
-          <h3>
-            <?= htmlspecialchars($data['title']); ?>
+          <strong>
+            <h3>
+              <?= htmlspecialchars($data['title']); ?>
 
-          </h3>
+            </h3>
+          </strong>
         </div>
         <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
         <img src="<?= $data['image_url']?>" alt="image">

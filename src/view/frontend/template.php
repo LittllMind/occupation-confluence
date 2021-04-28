@@ -47,7 +47,7 @@
         <div class="posts-list">
             <button type="button" name="button" class="btn"> <a href="index.php?action=index">HOME</a>  </button>
             <a href="http://www.facebook.com/occupationoperaconfluence/" target="_blank" class="btn-social btn-facebook"><i class="fa fa-facebook"></i></a>
-            <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">BLOG</a>  </button>
+            <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">MEDIAS</a>  </button>
             <button type="button" name="button" class="btn"> <a href="index.php?action=listSound">WEBRADIO</a>  </button>
             <button type="button" name="button" class="btn"> <a href="index.php?action=listVideo">VIDEOS</a>  </button>
             <a href="http://instagram.com/occupationoperaconfluence?igshid=1apak4gnteq71" tssarget="_blank" class="btn-social btn-instagram"><i class="fa fa-instagram"></i></a>

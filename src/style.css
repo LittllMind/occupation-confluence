@@ -21,9 +21,33 @@
             url("assets/font/ufonts.com_u-s-a-condensed.eot") format("eot");
 }
 
+@font-face
+{
+    font-family: "tommy";
+    src:    url(assets/font/MADE\ TOMMY\ Black_PERSONAL\ USE.ttf) format("truetype"),
+            url("assets/font/MADE\ TOMMY\ Black_PERSONAL\ USE.eot") format("eot");
+}
+
+
+@font-face
+{
+    font-family: "aliensCows";
+    src:    url(assets/font/aliens\ and\ cows_trial.ttf) format("truetype"),
+            url("assets/font/aliens\ and\ cows_trial.eot") format("eot");
+}
+
+
+@font-face
+{
+    font-family: "mont";
+    src:    url(assets/font/EULA\ Free\ Font\ License\ Ver.ttf) format("truetype"),
+            url("assets/font/EULA\ Free\ Font\ License\ Ver.eot") format("eot");
+}
+
+
 body
 {
-    background-color: #B0C0BC;
+    /* background-color: #B0C0BC; */
 }
 
 .lien-radio
@@ -54,14 +78,14 @@ body
 {
     /* display: flex; */
     justify-content: center;
-    background-color: #B0C0BC;
+    /* background-color: #B0C0BC; */
     width: 100%;
 }
 
 .row
 {
     justify-content: center;
-    background-color: #B0C0BC;
+    /* background-color: #B0C0BC; */
 
 }
 
@@ -83,6 +107,14 @@ body
 
 }
 
+.chapeau
+{
+  background-color: #E6EFE9;
+  border-radius: 10px 10px 10px 10px;
+  padding: 1%;
+  margin-top: 10%;
+}
+
 .manifest h1
 {
     /* text-decoration: underline; */
@@ -95,14 +127,13 @@ body
 {
   text-align: center;
   list-style: none;
-  box-shadow: 12px 12px 2px 1px #C2EABA;
 }
 
 .manifest ul
 {
     text-align: center;
     list-style: none;
-    box-shadow: 12px 12px 2px 1px #BEDCFE;
+    box-shadow: 12px 12px 2px 1px #4B74A8;
 }
 
 .manifest li
@@ -114,9 +145,16 @@ body
 .navbar
 {
     display: grid;
-    background-color: #35588E;
+    /* background-color: #35588E; */
     justify-content: center;
     flex-direction: column;
+
+    background-image: url('assets/images/Occupation-cropped.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 600px;
+
 }
 
 
@@ -130,10 +168,10 @@ body
 
 .navbar-links a
 {
-    font-family: "valentine";
+    font-family: "aliensCows";
     color: #DA3022;
     padding: 1.5%;
-    font-size: 1.5em;
+    font-size: 2em;
     padding-right: 2%;
 }
 
@@ -147,22 +185,26 @@ body
     padding-right: 10%;
 }
 
-h1, h3
+h1
 {
     text-align:center;
 }
 
 .news-top
 {
-    background-color: #191A1A;
-    color: #D73123;
-    font-size:1.5em;
+    color: #191A1A;
     padding: 0.01%;
     width: 100%;
     border-radius: 10px 10px 10px 10px;
     margin: 1%;
-    font-family: "valentine";
+    font-family: "aliensCows";
     padding: 0.5%;
+}
+
+.news-top h3
+{
+  font-size: 4.5em;
+    
 }
 
 .news img
@@ -230,7 +272,7 @@ footer
   font-size: 1em;
   text-align: center;
   margin: auto;
-  background-color: #35588E;
+  background-color: #4B74A8;
   margin-top: 10%;
   color: #E6EFE9;
 }
