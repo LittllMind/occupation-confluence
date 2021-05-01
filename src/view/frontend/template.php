@@ -57,14 +57,13 @@
       </div>
       <div class="container">
         <div class="row">
-            <?= $content ?>
+          <?= $content ?>
         </div>
-
       </div>
-
-
       <footer>
         <div class="footer">
+          <img id="occupation-opera-confluence-QR" src="assets/images/occupation-confluence-QR.png" alt="Occupons partout">
+
           <h4>Occupation de l'Opéra Confluence</h4>
           <p>Nous occuperons les lieux aussi longtemps que necessaire et pour ce faire, nous avons besoin de l'aide de tous !</p>
           <strong>

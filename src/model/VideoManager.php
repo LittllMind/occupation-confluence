@@ -12,8 +12,7 @@ class VideoManager extends BddManager
             'SELECT id, title, content, url, DATE_FORMAT(creation_date, \'%d/%m/%Y\')
             AS creation_date_fr
             FROM video
-            ORDER BY creation_date
-            DESC LIMIT 0, 5'
+            ORDER BY creation_date DESC'
         );
 
         return $req;

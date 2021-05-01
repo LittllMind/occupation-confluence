@@ -75,6 +75,12 @@ body
     margin: auto;
 }
 
+.manifest img
+{
+    width: 10%;
+    margin-top: 10%;
+}
+
 .chapeau
 {
   background-color: #E6EFE9;
@@ -163,7 +169,7 @@ h1
 .news-top
 {
     color: #191A1A;
-    font-size: 4.5em;
+    /* font-size: 4.5em; */
     padding: 0.01%;
     width: 100%;
     border-radius: 10px 10px 10px 10px;
@@ -175,9 +181,15 @@ h1
 
 .news-top h3
 {
-  font-size: 4.5em;
+  /* font-size: 4.5em; */
 
 }
+
+#occupons-partout
+{
+    width: 70%;
+}
+
 
 .news img
 {
@@ -247,4 +259,9 @@ footer
   background-color: #4B74A8;
   margin-top: 10%;
   color: #E6EFE9;
+}
+
+.footer a
+{
+    margin-bottom: 1%;
 }

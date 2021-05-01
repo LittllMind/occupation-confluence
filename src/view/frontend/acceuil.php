@@ -7,6 +7,7 @@
 </div> -->
 
 <div class="manifest">
+  <img src="assets/images/logo-occupation-opera.png" alt="logo occupation  ">
   <div class="chapeau">
     <strong><h1>Communiqué de presse</h1></strong>
 
@@ -104,6 +105,7 @@
     <li class="list-group-item">Le <strong>futur</strong> sera-t-il uniquement <strong>virtuel</strong> ?</li>
   </ul>
 </div>
+<!-- <img id="occupons-partout" src="assets/images/occupons-partout.jpg" alt="Occupons partout"> -->
 
 
 <?php $content = ob_get_clean(); ?>

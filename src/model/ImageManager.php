@@ -12,8 +12,7 @@ class ImageManager extends BddManager
             'SELECT id, title, url, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\')
             AS creation_date
             FROM galerie
-            ORDER BY creation_date
-            DESC LIMIT 0, 5'
+            ORDER BY creation_date DESC'
         );
 
         return $req;

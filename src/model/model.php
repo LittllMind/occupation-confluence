@@ -6,8 +6,7 @@ function getPosts()
         'SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\')
         AS creation_date_fr
         FROM billets
-        ORDER BY creation_date
-        DESC LIMIT 0, 5'
+        ORDER BY creation_date'
     );
 
     return $req;

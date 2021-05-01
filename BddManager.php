@@ -20,14 +20,14 @@ class BddManager
     // }
 
     // Prod
-    protected function dbConnect()
-    {
-        $bdd = new PDO(
-            'mysql:host=occupadlittllmin.mysql.db;dbname=occupadlittllmin;charset=utf8',
-            'occupadlittllmin',
-            'jadore18O',
-            array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
-        );
-        return $bdd;
-    }
+    // protected function dbConnect()
+    // {
+    //     $bdd = new PDO(
+    //         'mysql:host=occupadlittllmin.mysql.db;dbname=occupadlittllmin;charset=utf8',
+    //         'occupadlittllmin',
+    //         'jadore18O',
+    //         array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
+    //     );
+    //     return $bdd;
+    // }
 }

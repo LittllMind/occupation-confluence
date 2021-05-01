@@ -31,9 +31,6 @@ function listPosts()
 
 function listImage()
 {
-    $postManager = new PostManager();
-    $posts = $postManager->getPosts();
-
     $imageManager = new ImageManager();
     $images = $imageManager->getImages();
 
