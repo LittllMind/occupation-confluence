@@ -18,13 +18,12 @@ while ($data = $sound->fetch()) {
                 height="315"
                 scrolling="no"
                 frameborder="no"
-                allow="autoplay"
                 src="<?= $data['url']?>">
         </iframe>
         <div class="post-content">
 
           <p>
-              <?=nl2br(htmlspecialchars($data['content']));?>
+              <?=$data['content']?>
           </p>
 
         </div>

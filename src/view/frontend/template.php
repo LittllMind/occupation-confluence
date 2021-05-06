@@ -6,7 +6,8 @@
       <meta charset="UTF-8">
       <title><?= $title ?></title>
       <link  rel="stylesheet" type="text/css" href="style.css"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-reboot.min.css"
@@ -45,14 +46,17 @@
 
       <div class="navbar-links">
         <div class="posts-list">
-            <button type="button" name="button" class="btn"> <a href="index.php?action=index">HOME</a>  </button>
-            <a href="http://www.facebook.com/occupationoperaconfluence/" target="_blank" class="btn-social btn-facebook"><i class="fa fa-facebook"></i></a>
+            <button type="button" name="button" class="btn"> <a href="index.php?action=index">MANIFEST</a>  </button>
             <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">MEDIAS</a>  </button>
             <button type="button" name="button" class="btn"> <a href="index.php?action=listSound">WEBRADIO</a>  </button>
             <button type="button" name="button" class="btn"> <a href="index.php?action=listVideo">VIDEOS</a>  </button>
-            <a href="http://instagram.com/occupationoperaconfluence?igshid=1apak4gnteq71" tssarget="_blank" class="btn-social btn-instagram"><i class="fa fa-instagram"></i></a>
             <button type="button" name="button" class="btn"> <a href="index.php?action=listImage">GALERIE</a>  </button>
+            <a href="index.php?action=listBlogPost"><i class="fas fa-book"></i></a>
+            <a href="http://instagram.com/occupationoperaconfluence?igshid=1apak4gnteq71" tssarget="_blank" class="btn-social btn-instagram"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UC9KJ1P51PpecIQuTXeH4pRg" target="_blank" class="btn-social btn-youtube"><i class="fa fa-youtube"></i></a>
+            <a href="http://www.facebook.com/occupationoperaconfluence/" target="_blank" class="btn-social btn-facebook"><i class="fa fa-facebook"></i></a>
       </div>
+
 
       </div>
       <div class="container">
@@ -68,7 +72,7 @@
           <p>Nous occuperons les lieux aussi longtemps que necessaire et pour ce faire, nous avons besoin de l'aide de tous !</p>
           <strong>
             <p>Des assemblées générales sont organisées les <br>
-                Mercredi, Vendredi, Dimanche à 14h30.
+                Mercredis, Vendredis, Dimanches à 14h30.
             </p>
           </strong>
           <h4>Ce que nous défendons, nous le défendons pour tous.tes</h4>

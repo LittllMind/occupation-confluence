@@ -4,12 +4,14 @@ require_once('model/CommentManager.php');
 require_once('model/ImageManager.php');
 require_once('model/VideoManager.php');
 require_once('model/SoundManager.php');
+require_once('model/GoldBookManager.php');
 
 use \OpenClassroom\Blog\Model\PostManager;
 use \OpenClassroom\Blog\Model\CommentManager;
 use \OpenClassroom\Blog\Model\ImageManager;
 use \OpenClassroom\Blog\Model\VideoManager;
 use \OpenClassroom\Blog\Model\SoundManager;
+use \OpenClassroom\Blog\Model\GoldBookManager;
 
 function index()
 {
@@ -28,6 +30,17 @@ function listPosts()
 
     require('view/frontend/listPostView.php');
 }
+
+function listGoldBook()
+{
+    $goldBookManager = new GoldBookManager();
+    $posts = $goldBookManager->getGoldBooks();
+
+    $title = 'Le livre d\'or';
+
+    require('view/frontend/listGoldBookView.php');
+}
+
 
 function listImage()
 {
@@ -63,6 +76,11 @@ function listSound()
 function postForm()
 {
     require('view/frontend/addBlogPost.php');
+}
+
+function postGoldBook()
+{
+    require('view/frontend/addGoldBook.php');
 }
 
 function imageForm()
@@ -109,6 +127,20 @@ function addPostBlog($title, $content, $image_url, $creation_date)
         header('Location: index.php');
     }
 }
+
+function addGoldBook($title, $content, $image_url, $creation_date)
+{
+    $goldBookManager = new GoldBookManager();
+
+    $affectedLines = $goldBookManager->postGoldBook($title, $content, $image_url, $creation_date);
+
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter le post !');
+    } else {
+        header('Location: index.php');
+    }
+}
+
 
 function addImage($title, $image_url, $creation_date)
 {
