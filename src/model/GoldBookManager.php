@@ -3,7 +3,7 @@ namespace OpenClassroom\Blog\Model;
 
 require_once("model/BddManager.php");
 
-class PostManager extends BddManager
+class GoldBookManager extends BddManager
 {
     public function getGoldBooks()
     {
@@ -11,7 +11,7 @@ class PostManager extends BddManager
         $req = $bdd->query(
             'SELECT id, title, content, image_url, DATE_FORMAT(creation_date, \'%d/%m/%Y\')
             AS creation_date_fr
-            FROM gold-book
+            FROM goldBook
             ORDER BY creation_date DESC'
         );
 
@@ -24,10 +24,10 @@ class PostManager extends BddManager
         $req = $bdd->prepare(
             'SELECT id, title, content, image_url, DATE_FORMAT(creation_date, \'%d/%m/%Y\')
             AS creation_date_fr
-            FROM gold-book
+            FROM goldBook
             WHERE id = ?'
         );
-        $req->execute(array($postId));
+        $req->execute(array($goldBook));
         $goldBook = $req->fetch();
 
         return $goldBook;

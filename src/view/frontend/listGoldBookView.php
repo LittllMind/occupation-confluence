@@ -5,32 +5,27 @@
 <?php
 while ($data = $posts->fetch()) {
     ?>
-    <div class="news">
-        <div class="news-top">
-          <strong>
+    <div class="gold-book">
+        <div class="gold-book-top">
+          <!-- <strong>
             <h3>
-              <?= htmlspecialchars($data['title']); ?>
+
 
             </h3>
-          </strong>
+          </strong> -->
         </div>
         <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
-        <img src="<?= $data['image_url']?>" alt="image">
         </a>
-        <div class="post-content">
+        <div class="gold-book-content">
 
           <p>
               <?=$data['content'];?>
           </p>
 
         </div>
-        <div class="news-footer">
-          <em>le <?= $data['creation_date_fr']; ?></em>
-
-          <em>  </em>
-
+        <div class="gold-book-footer">
+          <em><?= htmlspecialchars($data['title']); ?></em>
         </div>
-
     </div>
 
     <?php

@@ -6,7 +6,7 @@
   <div class="row">
     <form action="index.php?action=addGoldBook" method="post">
         <div class="form-group">
-            <label for="title">titre</label><br />
+            <label for="title">Nom</label><br />
             <input class="form-control" type="text" id="title" name="title" />
         </div>
         <div class="form-group">
