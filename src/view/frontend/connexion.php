@@ -13,7 +13,7 @@
 
   <div class="container">
     <div class="row">
-      <form action="index.php?action=memberConnexion">
+      <form action="index.php?action=memberConnexion" methode="post">
         <div class="form-group">
           <label for="pseudo">Pseudo</label>
           <input type="text" class="form-control" id="pseudo" name="pseudo"
@@ -29,7 +29,7 @@
           required="true">
         </div>
         <!-- Checked checkbox -->
-        <div class="form-check">
+        <!-- <div class="form-check">
           <input
           class="form-check-input"
           type="checkbox"
@@ -37,10 +37,10 @@
           name="stayConnect"
           id="flexCheckChecked"
           checked
-          />
-          <label class="form-check-label" for="flexCheckChecked">
+          /> -->
+          <!-- <label class="form-check-label" for="flexCheckChecked">
             Stay connect
-          </label>
+          </label> -->
         </div>
       <button type="submit" class="btn btn-success">Connexion</button>
 

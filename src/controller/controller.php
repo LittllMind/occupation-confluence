@@ -27,19 +27,21 @@ function login()
     require('view/frontend/connexion.php');
 }
 
-function memberConnexion($pseudo, $password, $flexCheckChecked)
+function memberConnexion($pseudo, $password)
 {
     $memberManager = new MemberManager();
-    $user = $memberManager->getMember($pseudo, $password, $flexCheckChecked);
+    $user = $memberManager->getMember($pseudo, $password);
 
-    if ($user === false) {
-        throw new Exception('L\'utilisateur n\'existe pas !');
-    } else {
-        echo $pseudo;
-        echo $password;
-        echo $flexCheckChecked;
-        header('Location: events.php');
-    }
+    echo $pseudo;
+    echo $password;
+    //
+    // if ($user === false) {
+    //     throw new Exception('L\'utilisateur n\'existe pas !');
+    // } else {
+    //     echo $pseudo;
+    //     echo $password;
+    //     header('Location: events.php');
+    // }
     // if ($password == $user['password']) {
     //     session_start();
     //     $_SESSION['id'] = $user['id'];

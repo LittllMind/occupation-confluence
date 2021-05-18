@@ -3,31 +3,26 @@
 
 <?php ob_start(); ?>
 <?php
-while ($data = $posts->fetch()) {
+while ($user = $user->fetch()) {
     ?>
     <div class="news">
         <div class="news-top">
           <strong>
             <h3>
-              <?= htmlspecialchars($data['title']); ?>
+              <?= htmlspecialchars($user['pseudo']); ?>
 
             </h3>
           </strong>
         </div>
         <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
-        <img src="<?= $data['image_url']?>" alt="image">
+        <img src="<?= $data['password']?>" alt="image">
         </a>
         <div class="post-content">
 
-          <p>
-              <?=$data['content'];?>
-          </p>
 
         </div>
         <div class="news-footer">
-          <em>le <?= $data['creation_date_fr']; ?></em>
 
-          <em>  </em>
 
         </div>
 

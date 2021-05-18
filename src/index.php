@@ -19,8 +19,11 @@ try {
             login();
             break;
         case 'memberConnexion':
-            if (!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['flexCheckChecked'])) {
-                  memberConnexion($_POST['pseudo'], $_POST['password'], $_POST['flexCheckChecked']);
+            if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
+                  echo $_POST['pseudo'];
+                  echo $_POST['password'];
+
+                  // memberConnexion($_POST['pseudo'], $_POST['password'], $_POST['flexCheckChecked']);
             } else {
                     throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
