@@ -2,6 +2,14 @@
 <?php $title = 'Videos'; ?>
 
 <?php ob_start(); ?>
+
+
+<a  id="youtubeNational"
+    href="https://www.youtube.com/channel/UCL_ICNPmZGhk4xnqj0bOFew"
+    target="_blank" class="btn-social btn-youtube">
+    <i class="fa fa-youtube"> Coordination Nationale</i>
+</a>
+
 <?php
 while ($data = $videos->fetch()) {
     ?>

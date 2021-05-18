@@ -3,28 +3,29 @@
 
 <?php ob_start(); ?>
 <?php
+
 while ($data = $posts->fetch()) {
     ?>
-    <div class="gold-book">
-        <div class="gold-book-top">
-          <!-- <strong>
+    <div class="news">
+        <div class="news-top">
+          <strong>
             <h3>
-
+              <?= htmlspecialchars($data['title']); ?>
 
             </h3>
-          </strong> -->
+          </strong>
         </div>
         <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
         </a>
-        <div class="gold-book-content">
+        <div class="news-content">
 
           <p>
               <?=$data['content'];?>
           </p>
 
         </div>
-        <div class="gold-book-footer">
-          <em><?= htmlspecialchars($data['title']); ?></em>
+        <div class="news-footer">
+          <!-- <em><?= htmlspecialchars($data['title']); ?></em> -->
         </div>
     </div>
 

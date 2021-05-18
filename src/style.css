@@ -65,6 +65,15 @@ body
 
 }
 
+#youtubeNational
+{
+  font-family: "aliensCows";
+  color: #DA3022;
+  padding: 1.5%;
+  font-size: 2em;
+  padding-right: 2%;
+}
+
 .main-home
 {
     display: flex;
@@ -196,6 +205,11 @@ h1
 {
     font-size: 4.5em;
 
+}
+
+.gold-book-top h3
+{
+    font-size: 4.5em;
 }
 
 .news img
