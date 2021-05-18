@@ -6,7 +6,9 @@ use \PDO;
 class BddManager
 {
 
-    // Developpement
+
+    //--------------D E V E L O P P E M E N T----------
+
 
     protected function dbConnect()
     {
@@ -19,7 +21,9 @@ class BddManager
         return $bdd;
     }
 
-    // Prod
+
+    //-----------   P R O D U C T I O N ---------------
+
     // protected function dbConnect()
     // {
     //     $bdd = new PDO(

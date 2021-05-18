@@ -7,7 +7,9 @@
 </div> -->
 
 <div class="manifest">
-  <img src="assets/images/logo-occupation-opera.png" alt="logo occupation  ">
+  <a href="index.php?action=login"><img src="assets/images/logo-occupation-opera.png" alt="logo occupation"></a>
+
+
   <div class="chapeau">
     <strong><h1>Communiqué de presse</h1></strong>
 

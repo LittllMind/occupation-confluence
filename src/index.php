@@ -14,6 +14,20 @@ try {
         $action = $_GET['action'];
     }
     switch ($action) {
+        // ----------- M E M B E R S ---------
+        case 'login':
+            login();
+            break;
+        case 'memberConnexion':
+            if (!empty($_POST['pseudo']) && !empty($_POST['password']) && !empty($_POST['flexCheckChecked'])) {
+                  memberConnexion($_POST['pseudo'], $_POST['password'], $_POST['flexCheckChecked']);
+            } else {
+                    throw new Exception('Erreur : tous les champs ne sont pas remplis !');
+            }
+            break;
+        case 'events':
+            events();
+            break;
         // ----------- LIST VIEWS
         case 'index':
             index();

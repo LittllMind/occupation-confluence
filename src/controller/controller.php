@@ -5,6 +5,7 @@ require_once('model/ImageManager.php');
 require_once('model/VideoManager.php');
 require_once('model/SoundManager.php');
 require_once('model/GoldBookManager.php');
+require_once('model/MemberManager.php');
 
 use \OpenClassroom\Blog\Model\PostManager;
 use \OpenClassroom\Blog\Model\CommentManager;
@@ -12,11 +13,43 @@ use \OpenClassroom\Blog\Model\ImageManager;
 use \OpenClassroom\Blog\Model\VideoManager;
 use \OpenClassroom\Blog\Model\SoundManager;
 use \OpenClassroom\Blog\Model\GoldBookManager;
+use \OpenClassroom\Blog\Model\MemberManager;
 
 function index()
 {
     $title = 'Occupation Opéra Confluence';
     require('view/frontend/acceuil.php');
+}
+
+function login()
+{
+    $title = 'Connexion';
+    require('view/frontend/connexion.php');
+}
+
+function memberConnexion($pseudo, $password, $flexCheckChecked)
+{
+    $memberManager = new MemberManager();
+    $user = $memberManager->getMember($pseudo, $password, $flexCheckChecked);
+
+    if ($user === false) {
+        throw new Exception('L\'utilisateur n\'existe pas !');
+    } else {
+        echo $pseudo;
+        echo $password;
+        echo $flexCheckChecked;
+        header('Location: events.php');
+    }
+    // if ($password == $user['password']) {
+    //     session_start();
+    //     $_SESSION['id'] = $user['id'];
+    //     $_SESSION['pseudo'] = $user['pseudo'];
+    // }
+}
+
+function events()
+{
+    require('view/member/events.php');
 }
 
 // ------------------------ LIST VIEW
