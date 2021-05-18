@@ -20,6 +20,19 @@ class MemberManager extends BddManager
 
         return $user;
     }
+
+    public function getUsers()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->query(
+            'SELECT id, pseudo, password, mail, DATE_FORMAT(registration_date, \'%d/%m/%Y\')
+            AS registration_date_fr
+            FROM membre
+            ORDER BY creation_date DESC'
+        );
+
+        return $req;
+    }
     //
     // public function getPost($postId)
     // {

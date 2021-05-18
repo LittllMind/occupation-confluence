@@ -15,7 +15,8 @@ while ($user = $user->fetch()) {
           </strong>
         </div>
         <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
-        <img src="<?= $data['password']?>" alt="image">
+          <?= htmlspecialchars($user['password']); ?>
+          
         </a>
         <div class="post-content">
 

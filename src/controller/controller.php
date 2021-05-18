@@ -51,6 +51,10 @@ function memberConnexion($pseudo, $password)
 
 function events()
 {
+    $memberManager = new MemberManager();
+    $users = $memberManager->getUsers();
+
+
     require('view/member/events.php');
 }
 
