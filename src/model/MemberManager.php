@@ -5,16 +5,16 @@ require_once("model/BddManager.php");
 
 class MemberManager extends BddManager
 {
-    public function getMember($pseudo, $password, $flexCheckChecked)
+    public function getMember($mail)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->query(
-            'SELECT id, password
+        $req = $bdd->prepare(
+            'SELECT id, password, pseudo, mail, registration_date
             FROM membre
-            WHERE pseudo = ?'
+            WHERE mail = ?'
         );
 
-        $req->execute(array($pseudo));
+        $req->execute(array($mail));
         $user = $req->fetch();
 
 
@@ -28,7 +28,7 @@ class MemberManager extends BddManager
             'SELECT id, pseudo, password, mail, DATE_FORMAT(registration_date, \'%d/%m/%Y\')
             AS registration_date_fr
             FROM membre
-            ORDER BY creation_date DESC'
+            ORDER BY registration_date DESC'
         );
 
         return $req;

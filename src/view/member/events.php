@@ -2,27 +2,32 @@
 <?php $title = 'Évennements'; ?>
 
 <?php ob_start(); ?>
+
+
 <?php
-while ($user = $user->fetch()) {
+while ($data = $users->fetch()) {
     ?>
     <div class="news">
         <div class="news-top">
+
           <strong>
             <h3>
-              <?= htmlspecialchars($user['pseudo']); ?>
+              <?= htmlspecialchars($data['id']); ?>
+              <?= htmlspecialchars($data['pseudo']); ?>
 
             </h3>
           </strong>
         </div>
-        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
-          <?= htmlspecialchars($user['password']); ?>
-          
         </a>
         <div class="post-content">
 
+          <p>
+              <?=$data['password'];?>
+          </p>
 
         </div>
         <div class="news-footer">
+          <em>le <?= $data['registration_date']; ?></em>
 
 
         </div>
@@ -33,6 +38,7 @@ while ($user = $user->fetch()) {
 }
     $posts->closeCursor();
 ?>
+
 <?php $content = ob_get_clean(); ?>
 
-<?php require('memberTemplate.php');
+<?php require('../frontend/template.php');

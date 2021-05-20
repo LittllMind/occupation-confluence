@@ -11,40 +11,42 @@
 
 <?php ob_start(); ?>
 
-  <div class="container">
-    <div class="row">
-      <form action="index.php?action=memberConnexion" methode="post">
-        <div class="form-group">
-          <label for="pseudo">Pseudo</label>
-          <input type="text" class="form-control" id="pseudo" name="pseudo"
-          aria-describedby="pseudoHelp"
-          placeholder="Enter Pseudo"
-          required="true">
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password"
-          aria-describedby="paswordAlert"
-          placeholder="Password"
-          required="true">
-        </div>
-        <!-- Checked checkbox -->
-        <!-- <div class="form-check">
-          <input
-          class="form-check-input"
-          type="checkbox"
-          value=""
-          name="stayConnect"
-          id="flexCheckChecked"
-          checked
-          /> -->
-          <!-- <label class="form-check-label" for="flexCheckChecked">
-            Stay connect
-          </label> -->
-        </div>
-      <button type="submit" class="btn btn-success">Connexion</button>
+
+      <div class="container">
+        <div class="row">
+          <form action="index.php?action=memberConnexion" method="post">
+            <div class="form-group">
+              <label for="mail">Mail</label>
+              <input type="text" class="form-control" id="mail" name="mail"
+              aria-describedby="mailHelp"
+              placeholder="Enter Mail"
+              required="true">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password"
+              aria-describedby="paswordAlert"
+              placeholder="Password"
+              required="true">
+            </div>
+            <!-- <input class="form-check-input"
+            type="checkbox"
+            value=""
+            name="stayConnect"
+            id="flexCheckChecked"
+            checked
+            />
+            <label class="form-check-label" for="flexCheckChecked">
+              Stay connect
+            </label> -->
 
 
+              <div>
+                  <button class="btn btn-success" type="submit"> Connexion </button>
+              </div>
+          </form>
+        </div>
+      </div>
 
 <?php $content = ob_get_clean(); ?>
 

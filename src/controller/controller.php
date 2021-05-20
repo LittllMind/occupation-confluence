@@ -27,13 +27,24 @@ function login()
     require('view/frontend/connexion.php');
 }
 
-function memberConnexion($pseudo, $password)
+function memberConnexion($mail, $password)
 {
     $memberManager = new MemberManager();
-    $user = $memberManager->getMember($pseudo, $password);
+    $user = $memberManager->getMember($mail);
 
-    echo $pseudo;
+    echo $mail;
+    echo '<br>';
     echo $password;
+    echo '<br>';
+    echo $user['id'];
+    echo '<br>';
+    echo $user['pseudo'];
+    echo '<br>';
+    echo $user['password'];
+    echo '<br>';
+    echo $user['mail'];
+    echo '<br>';
+    echo $user['registration_date'];
     //
     // if ($user === false) {
     //     throw new Exception('L\'utilisateur n\'existe pas !');
@@ -47,6 +58,8 @@ function memberConnexion($pseudo, $password)
     //     $_SESSION['id'] = $user['id'];
     //     $_SESSION['pseudo'] = $user['pseudo'];
     // }
+
+    require('view/member/events.php');
 }
 
 function events()
