@@ -6,6 +6,7 @@ require_once('model/VideoManager.php');
 require_once('model/SoundManager.php');
 require_once('model/GoldBookManager.php');
 require_once('model/MemberManager.php');
+require_once('model/EventsManager.php');
 
 use \OpenClassroom\Blog\Model\PostManager;
 use \OpenClassroom\Blog\Model\CommentManager;
@@ -14,6 +15,7 @@ use \OpenClassroom\Blog\Model\VideoManager;
 use \OpenClassroom\Blog\Model\SoundManager;
 use \OpenClassroom\Blog\Model\GoldBookManager;
 use \OpenClassroom\Blog\Model\MemberManager;
+use \OpenClassroom\Blog\Model\EventsManager;
 
 function index()
 {
@@ -32,19 +34,61 @@ function memberConnexion($mail, $password)
     $memberManager = new MemberManager();
     $user = $memberManager->getMember($mail);
 
-    echo $mail;
-    echo '<br>';
-    echo $password;
-    echo '<br>';
-    echo $user['id'];
-    echo '<br>';
-    echo $user['pseudo'];
-    echo '<br>';
-    echo $user['password'];
-    echo '<br>';
-    echo $user['mail'];
-    echo '<br>';
-    echo $user['registration_date'];
+    $isPasswordCorrect = password_verify($password, $user['password']);
+    $correctPassword = isset($isPasswordCorrect);
+
+
+
+    if ($isPasswordCorrect) {
+      echo $mail;
+      echo '<br>';
+      echo $password;
+      echo '<br>';
+      echo $user['id'];
+      echo '<br>';
+      echo $user['pseudo'];
+      echo '<br>';
+      echo $user['password'];
+      echo '<br>';
+      echo $user['mail'];
+      echo '<br>';
+      echo $user['registration_date'];
+      echo '<br>';
+      echo '$isPasswordCorrect : ' . $isPasswordCorrect;
+      echo '<br>';
+      echo $correctPassword;
+      echo '<br>';
+      echo $user['user_status'];
+
+      $_SESSION['id'] = $user['id'];
+      $_SESSION['pseudo'] = $user['pseudo'];
+      $_SESSION['user_status'] = $user['user_status'];
+
+      $eventsManager = new EventsManager();
+      $events = $eventsManager->getEvents();
+
+      require('view/member/events.php');
+    } else {
+          throw new Exception('Mauvais identifiant ou mot de passe');
+          header('Location: index.php?action=login');
+    }
+    //
+    // if (!$user) {
+    //     echo 'Mauvais identifiant ou mot de passe';
+    //     header('Location: index.php?action=login');
+    // } else {
+    //     if($isPasswordCorrect) {
+    //         session_start();
+    //         $_SESSION['id'] = $user['id'];
+    //         $_SESSION['pseudo'] = $user['pseudo'];
+    //         echo 'Bienvenue' . $user['pseudo'];
+    //         echo 'Bienvenue' . $_SESSION['pseudo'];
+    //     }
+    //     header('Location: index.php?action=listEvents');
+    // }
+
+
+
     //
     // if ($user === false) {
     //     throw new Exception('L\'utilisateur n\'existe pas !');
@@ -59,19 +103,27 @@ function memberConnexion($mail, $password)
     //     $_SESSION['pseudo'] = $user['pseudo'];
     // }
 
-    require('view/member/events.php');
+
 }
 
-function events()
+function listEvents()
 {
-    $memberManager = new MemberManager();
-    $users = $memberManager->getUsers();
+    $eventManager = new EventsManager();
+    $events = $eventManager->getEvents();
 
 
     require('view/member/events.php');
 }
 
 // ------------------------ LIST VIEW
+
+function listUser()
+{
+    $memberManager = new MemberManager();
+    $users = $memberManager->getUsers();
+
+    require('view/member/users.php');
+}
 
 function listPosts()
 {
@@ -124,6 +176,10 @@ function listSound()
 
 
 // ------------------------ FORM CONTENT
+function userForm()
+{
+    require('view/member/addUser.php');
+}
 
 function postForm()
 {
@@ -152,8 +208,6 @@ function soundForm()
 
 
 // ------------------------ ID VIEW
-
-
 function post()
 {
     $postManager = new PostManager();
@@ -164,8 +218,28 @@ function post()
 
     require('view/frontend/postView.php');
 }
-
 // ------------------------ ADD CONTENT
+
+
+function addUser($pseudo, $email, $password, $confirmPassword)
+{
+    $memberManager = new MemberManager();
+
+    if ($password == $confirmPassword) {
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+        $newMember = $memberManager->postUser($pseudo, $email, $password_hash);
+        header('Location: index.php?action=login');
+    } else {
+      if ($affectedLines === false) {
+          throw new Exception('Impossible d\'ajouter l\'utilisateur !');
+      } else {
+          header('Location: index.php?action=userForm');
+      }
+    }
+
+
+
+}
 
 function addPostBlog($title, $content, $image_url, $creation_date)
 {

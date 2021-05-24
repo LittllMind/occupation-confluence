@@ -15,6 +15,9 @@ try {
     }
     switch ($action) {
         // ----------- M E M B E R S ---------
+        case 'index':
+            index();
+            break;
         case 'login':
             login();
             break;
@@ -25,12 +28,13 @@ try {
                     throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
             break;
-        case 'events':
-            events();
-            break;
+
         // ----------- LIST VIEWS
-        case 'index':
-            index();
+        case 'listEvents':
+            listEvents();
+            break;
+        case 'listUser':
+            listUser();
             break;
         case 'listPosts':
             listPosts();
@@ -48,6 +52,9 @@ try {
             listSound();
             break;
         // ------------ FORMS CONTENT
+        case 'userForm':
+            userForm();
+            break;
         case 'postForm':
             postForm();
             break;
@@ -64,6 +71,13 @@ try {
             soundForm();
             break;
         // ------------ ADD CONTENT
+        case 'addUser':
+            if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirmPassword'])) {
+                addUser($_POST['pseudo'], $_POST['email'], $_POST['password'], $_POST['confirmPassword']);
+            } else {
+                throw new Exception('Erreur : tous les champs ne sont pas remplis !');
+            }
+            break;
         case 'addPostBlog':
             if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['image_url']) && !empty($_POST['creation_date'])) {
                 addPostBlog($_POST['title'], $_POST['content'], $_POST['image_url'], $_POST['creation_date']);

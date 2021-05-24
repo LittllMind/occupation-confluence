@@ -1,34 +1,40 @@
 
-<?php $title = 'Évennements'; ?>
+<?php $title = 'Blog'; ?>
 
 <?php ob_start(); ?>
-
-
 <?php
-while ($data = $users->fetch()) {
+while ($data = $events->fetch()) {
     ?>
     <div class="news">
         <div class="news-top">
-
           <strong>
             <h3>
-              <?= htmlspecialchars($data['id']); ?>
-              <?= htmlspecialchars($data['pseudo']); ?>
 
             </h3>
           </strong>
         </div>
+        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">modifier l'evennement
         </a>
         <div class="post-content">
+          <?= htmlspecialchars($data['id']); ?>
+          <br>
+          <?= htmlspecialchars($data['title']); ?>
+          <br>
+          <?= htmlspecialchars($data['content']); ?>
+          <br>
+          <?= htmlspecialchars($data['creation_date']); ?>
+          <br>
+          <?= htmlspecialchars($data['modified_date']); ?>
+          <br>
 
-          <p>
-              <?=$data['password'];?>
-          </p>
 
         </div>
         <div class="news-footer">
-          <em>le <?= $data['registration_date']; ?></em>
+          <em>Créé le <?= $data['creation_date']; ?></em>
+          <br>
+          <em>Modifié le <?= $data['modified_date']; ?></em>
 
+          <em>  </em>
 
         </div>
 
@@ -36,9 +42,8 @@ while ($data = $users->fetch()) {
 
     <?php
 }
-    $posts->closeCursor();
+    $events->closeCursor();
 ?>
-
 <?php $content = ob_get_clean(); ?>
 
-<?php require('../frontend/template.php');
+<?php require('memberTemplate.php');
