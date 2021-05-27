@@ -17,30 +17,37 @@
           <form action="index.php?action=memberConnexion" method="post">
             <div class="form-group">
               <label for="mail">Mail</label>
-              <input type="text" class="form-control" id="mail" name="mail"
-              aria-describedby="mailHelp"
-              placeholder="Enter Mail"
-              required="true">
+              <input  type="text"
+                      class="form-control"
+                      id="mail"
+                      name="mail"
+                      aria-describedby="mailHelp"
+                      placeholder="Enter Mail"
+                      required="true">
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" name="password"
-              aria-describedby="paswordAlert"
-              placeholder="Password"
-              required="true">
+              <input  type="password"
+                      class="form-control"
+                      id="password"
+                      name="password"
+                      aria-describedby="paswordAlert"
+                      placeholder="Password"
+                      required="true">
             </div>
-            <!-- <input class="form-check-input"
-            type="checkbox"
-            value=""
-            name="stayConnect"
-            id="flexCheckChecked"
-            checked
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Stay connect
-            </label> -->
-
-
+            <div class="form-check">
+              <input
+              class="form-check-input"
+              type="checkbox"
+              value="stayConnect"
+              name="stayConnectOn"
+              id="stayConnect"
+              checked
+              />
+              <label class="form-check-label" for="stayConnect">
+                Stay connect
+              </label>
+            </div>
               <div>
                   <button class="btn btn-success" type="submit"> Connexion </button>
               </div>

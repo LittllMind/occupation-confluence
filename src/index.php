@@ -14,7 +14,7 @@ try {
         $action = $_GET['action'];
     }
     switch ($action) {
-        // ----------- M E M B E R S ---------
+        // ----------- U S E R S ---------
         case 'index':
             index();
             break;
@@ -22,11 +22,21 @@ try {
             login();
             break;
         case 'memberConnexion':
-            if (!empty($_POST['mail']) && !empty($_POST['password'])) {
-                  memberConnexion($_POST['mail'], $_POST['password']);
+            if (isset($_POST['stayConnect'])) {
+                $stayConnect = 'on';
             } else {
-                    throw new Exception('Erreur : tous les champs ne sont pas remplis !');
+                $stayConnect = 'off';
             }
+            if (!empty($_POST['mail']) && !empty($_POST['password']) && !empty($stayConnect)) {
+                  memberConnexion($_POST['mail'], $_POST['password'], $stayConnect);
+            } else {
+                    echo $_POST['mail']; echo $_POST['password']; echo $_POST['stayConnect'];
+                    $errorMessage = 'Tous les champs ne sont pas remplis';
+                    throw new Exception('tous les champs ne sont pas remplis !');
+            }
+            break;
+        case 'deconnexion':
+            deconnexion();
             break;
 
         // ----------- LIST VIEWS
@@ -75,6 +85,7 @@ try {
             if (!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirmPassword'])) {
                 addUser($_POST['pseudo'], $_POST['email'], $_POST['password'], $_POST['confirmPassword']);
             } else {
+                $errorMessage = 'Tous les champs ne sont pas remplis';
                 throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
             break;
@@ -82,6 +93,7 @@ try {
             if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['image_url']) && !empty($_POST['creation_date'])) {
                 addPostBlog($_POST['title'], $_POST['content'], $_POST['image_url'], $_POST['creation_date']);
             } else {
+                $errorMessage = 'Tous les champs ne sont pas remplis';
                 throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
             break;
@@ -89,6 +101,7 @@ try {
             if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['image_url']) && !empty($_POST['creation_date'])) {
                 addGoldBook($_POST['title'], $_POST['content'], $_POST['image_url'], $_POST['creation_date']);
             } else {
+                $errorMessage = 'Tous les champs ne sont pas remplis';
                 throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
             break;
@@ -96,6 +109,7 @@ try {
             if (!empty($_POST['title']) && !empty($_POST['image_url']) && !empty($_POST['creation_date'])) {
                 addImage($_POST['title'], $_POST['image_url'], $_POST['creation_date']);
             } else {
+                $errorMessage = 'Tous les champs ne sont pas remplis';
                 throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
             break;
@@ -103,6 +117,7 @@ try {
             if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['url']) && !empty($_POST['creation_date'])) {
                 addVideo($_POST['title'], $_POST['content'], $_POST['url'], $_POST['creation_date']);
             } else {
+                $errorMessage = 'Tous les champs ne sont pas remplis';
                 throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
             break;
@@ -110,6 +125,7 @@ try {
             if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['url']) && !empty($_POST['creation_date'])) {
                 addSound($_POST['title'], $_POST['content'], $_POST['url'], $_POST['creation_date']);
             } else {
+                $errorMessage = 'Tous les champs ne sont pas remplis';
                 throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
             break;

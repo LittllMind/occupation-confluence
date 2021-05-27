@@ -25,11 +25,17 @@ function index()
 
 function login()
 {
-    $title = 'Connexion';
-    require('view/frontend/connexion.php');
+    // if (isset($_COOKIE['pseudo'])) {
+    //     $stayConnect = 'on';
+    //     memberConnexion($_COOKIE['mail'], $_COOKIE['password'], $stayConnect);
+    // } else {
+    //     $title = 'Connexion';
+    //     require('view/frontend/connexion.php');
+    // }
+        require('view/frontend/connexion.php');
 }
 
-function memberConnexion($mail, $password)
+function memberConnexion($mail, $password, $stayConnect)
 {
     $memberManager = new MemberManager();
     $user = $memberManager->getMember($mail);
@@ -37,72 +43,64 @@ function memberConnexion($mail, $password)
     $isPasswordCorrect = password_verify($password, $user['password']);
     $correctPassword = isset($isPasswordCorrect);
 
-
-
     if ($isPasswordCorrect) {
-      echo $mail;
-      echo '<br>';
-      echo $password;
-      echo '<br>';
-      echo $user['id'];
-      echo '<br>';
-      echo $user['pseudo'];
-      echo '<br>';
-      echo $user['password'];
-      echo '<br>';
-      echo $user['mail'];
-      echo '<br>';
-      echo $user['registration_date'];
-      echo '<br>';
-      echo '$isPasswordCorrect : ' . $isPasswordCorrect;
-      echo '<br>';
-      echo $correctPassword;
-      echo '<br>';
-      echo $user['user_status'];
+        echo $mail;
+        echo '<br>';
+        echo $password;
+        echo '<br>';
+        echo $stayConnect;
+        echo '<br>';
+        echo $user['id'];
+        echo '<br>';
+        echo $user['pseudo'];
+        echo '<br>';
+        echo $user['password'];
+        echo '<br>';
+        echo $user['mail'];
+        echo '<br>';
+        echo $user['registration_date'];
+        echo '<br>';
+        echo '$isPasswordCorrect : ' . $isPasswordCorrect;
+        echo '<br>';
+        echo 'correctPassword' . $correctPassword;
+        echo '<br>';
+        echo $user['user_status'];
 
-      $_SESSION['id'] = $user['id'];
-      $_SESSION['pseudo'] = $user['pseudo'];
-      $_SESSION['user_status'] = $user['user_status'];
+        session_start();
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['pseudo'] = $user['pseudo'];
+        $_SESSION['user_status'] = $user['user_status'];
 
-      $eventsManager = new EventsManager();
-      $events = $eventsManager->getEvents();
+        setcookie('pseudo', $user['pseudo'], time() + 365*24*3600, null, null, false, true);
+        setcookie('mail', $mail, time() + 365*24*3600, null, null, false, true);
+        setcookie('password', $user['password'], time() + 365*24*3600, null, null, false, true);
+        setcookie('user_status', $user['user_status'], time() + 365*24*3600, null, null, false, true);
+        echo $_COOKIE['mail'] . '<br>';
+        echo $_COOKIE['pseudo'] . '<br>';
+        echo $_COOKIE['password'] . '<br>';
+        echo $_COOKIE['user_status'] . '<br>';
 
-      require('view/member/events.php');
+
+
+
+
+        $eventsManager = new EventsManager();
+        $events = $eventsManager->getEvents();
+
+        require('view/member/events.php');
     } else {
-          throw new Exception('Mauvais identifiant ou mot de passe');
-          header('Location: index.php?action=login');
+        $errorMessage = 'Mauvais identifiant ou mot de passe';
+        throw new Exception('Mauvais identifiant ou mot de passe');
+        header('Location: index.php?action=login');
     }
-    //
-    // if (!$user) {
-    //     echo 'Mauvais identifiant ou mot de passe';
-    //     header('Location: index.php?action=login');
-    // } else {
-    //     if($isPasswordCorrect) {
-    //         session_start();
-    //         $_SESSION['id'] = $user['id'];
-    //         $_SESSION['pseudo'] = $user['pseudo'];
-    //         echo 'Bienvenue' . $user['pseudo'];
-    //         echo 'Bienvenue' . $_SESSION['pseudo'];
-    //     }
-    //     header('Location: index.php?action=listEvents');
-    // }
+}
 
-
-
-    //
-    // if ($user === false) {
-    //     throw new Exception('L\'utilisateur n\'existe pas !');
-    // } else {
-    //     echo $pseudo;
-    //     echo $password;
-    //     header('Location: events.php');
-    // }
-    // if ($password == $user['password']) {
-    //     session_start();
-    //     $_SESSION['id'] = $user['id'];
-    //     $_SESSION['pseudo'] = $user['pseudo'];
-    // }
-
+function deconnexion()
+{
+    setcookie('pseudo', '');
+    setcookie('password', '');
+    setcookie('user_status', '');
+    header('Location: index.php?action=index');
 
 }
 
@@ -178,6 +176,7 @@ function listSound()
 // ------------------------ FORM CONTENT
 function userForm()
 {
+    $title = 'Add User';
     require('view/member/addUser.php');
 }
 
@@ -228,7 +227,7 @@ function addUser($pseudo, $email, $password, $confirmPassword)
     if ($password == $confirmPassword) {
         $password_hash = password_hash($password, PASSWORD_DEFAULT);
         $newMember = $memberManager->postUser($pseudo, $email, $password_hash);
-        header('Location: index.php?action=login');
+        header('Location: index.php?action=listEvents');
     } else {
       if ($affectedLines === false) {
           throw new Exception('Impossible d\'ajouter l\'utilisateur !');

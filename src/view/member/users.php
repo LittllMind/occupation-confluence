@@ -11,10 +11,10 @@
     Vous etes Connectés !
     <br>
     <?php
-     echo 'pseudo : ' . $_SESSION['pseudo'] . '<br>';
-     echo 'password : ' . $_COOKIE['password'] . '<br>';
+     echo 'pseudo : ' . $_COOKIE['pseudo'] . '<br>';
+     echo 'status : ' . $_COOKIE['user_status'] . '<br>';
     ?>
-    <a href="deconnexion.php">Deconnexion</a>
+    <a href="index.php?action=deconnexion">Deconnexion</a>
   </div>
 </div>
 <?php

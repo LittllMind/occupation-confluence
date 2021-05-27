@@ -51,9 +51,11 @@
             <button type="button" name="button" class="btn"> <a href="index.php?action=chat">CHAT</a>  </button>
             <button type="button" name="button" class="btn"> <a href="index.php?action=listUser">USERS</a>  </button>
             <?php
-            if ($_SESSION['user_status'] == 'admin') {
+            if (isset($_COOKIE['user_status']) && $_COOKIE['user_status'] == 'admin') {
                 echo'<button type="button" name="button" class="btn"> <a href="index.php?action=userForm">ADD USER</a>  </button>';
+            } else {
             }
+
             ?>
             <!-- <a style="height: 10%" href="index.php?action=listGoldBook"><img style="height: 10%" id="goldenBook" src="assets/images/book.png" alt="Livre d'or"></a> -->
             <!-- <a href="index.php?action=listGoldBook"><img style="height: 70%; padding: 1%" id="goldenBook" src="assets/images/book.svg" alt="Livre d'or"></a> -->
@@ -63,6 +65,7 @@
       </div>
       <!-- <div class="container"> -->
         <!-- <div class="row"> -->
+          <?= $_COOKIE['pseudo']; ?>
           <?= $content ?>
         <!-- </div> -->
 
