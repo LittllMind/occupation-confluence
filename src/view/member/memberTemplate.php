@@ -6,13 +6,8 @@
       <meta charset="UTF-8">
       <title><?= $title ?></title>
       <link  rel="stylesheet" type="text/css" href="style.css"/>
-      <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-reboot.min.css"
-      integrity="sha512-YmRhY1UctqTkuyEizDjgJcnn0Knu5tdpv09KUI003L5tjfn2YGxhujqXEFE7fqFgRlqU/jeTI+K7fFurBnRAhg==" -->
-      <!-- crossorigin="anonymous" /> -->
+
       <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css"
@@ -39,9 +34,6 @@
           <img src="assets/images/logo-occupation.jpg">
         </picture>
 
-
-        <!-- <img src="assets/images/logo-occupation.webp" alt="Occupation"> -->
-
       </div>
 
       <div class="navbar-links">
@@ -57,20 +49,20 @@
             }
 
             ?>
-            <!-- <a style="height: 10%" href="index.php?action=listGoldBook"><img style="height: 10%" id="goldenBook" src="assets/images/book.png" alt="Livre d'or"></a> -->
-            <!-- <a href="index.php?action=listGoldBook"><img style="height: 70%; padding: 1%" id="goldenBook" src="assets/images/book.svg" alt="Livre d'or"></a> -->
       </div>
 
 
       </div>
-      <!-- <div class="container"> -->
-        <!-- <div class="row"> -->
-          <?= $_COOKIE['pseudo']; ?>
+          <div class="navbar-links">
+            <div class="post-list">
+              <button type="button" name="button" class="btn"> <a href=""><?php $_COOKIE['pseudo'] ?></a>  </button>
+              <button type="button" name="button" class="btn"> <a href=""><?php $_COOKIE['user_status'] ?></a>  </button>
+              <button type="button" name="button" class="btn"> <a href="index.php?action=deconnexion">DECONNEXION</a>  </button>
+            </div>
+          </div>
+
           <?= $content ?>
-        <!-- </div> -->
 
-
-      <!-- </div> -->
       <footer>
         <div class="footer">
           <img id="occupation-opera-confluence-QR" src="assets/images/occupation-confluence-QR.png" alt="Occupons partout">

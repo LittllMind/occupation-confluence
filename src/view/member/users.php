@@ -4,19 +4,6 @@
 <?php ob_start(); ?>
 
 
-<div class="container">
-  <div class="row">
-    Index !
-    <br>
-    Vous etes Connectés !
-    <br>
-    <?php
-     echo 'pseudo : ' . $_COOKIE['pseudo'] . '<br>';
-     echo 'status : ' . $_COOKIE['user_status'] . '<br>';
-    ?>
-    <a href="index.php?action=deconnexion">Deconnexion</a>
-  </div>
-</div>
 <?php
 while ($data = $users->fetch()) {
     ?>

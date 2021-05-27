@@ -25,14 +25,18 @@ function index()
 
 function login()
 {
-    // if (isset($_COOKIE['pseudo'])) {
-    //     $stayConnect = 'on';
-    //     memberConnexion($_COOKIE['mail'], $_COOKIE['password'], $stayConnect);
-    // } else {
-    //     $title = 'Connexion';
-    //     require('view/frontend/connexion.php');
-    // }
+    if (isset($_COOKIE['pseudo'])) {
+        $stayConnect = 'on';
+        echo $_COOKIE['mail'];
+        echo $_COOKIE['password'];
+        echo $_COOKIE['password'];
+        memberConnexion($_COOKIE['mail'], $_COOKIE['password'], $stayConnect);
+    } else {
+        $title = 'Connexion';
         require('view/frontend/connexion.php');
+    }
+    require('view/frontend/connexion.php');
+
 }
 
 function memberConnexion($mail, $password, $stayConnect)
@@ -40,63 +44,86 @@ function memberConnexion($mail, $password, $stayConnect)
     $memberManager = new MemberManager();
     $user = $memberManager->getMember($mail);
 
-    $isPasswordCorrect = password_verify($password, $user['password']);
-    $correctPassword = isset($isPasswordCorrect);
-
-    if ($isPasswordCorrect) {
-        echo $mail;
-        echo '<br>';
-        echo $password;
-        echo '<br>';
-        echo $stayConnect;
-        echo '<br>';
-        echo $user['id'];
-        echo '<br>';
-        echo $user['pseudo'];
-        echo '<br>';
-        echo $user['password'];
-        echo '<br>';
-        echo $user['mail'];
-        echo '<br>';
-        echo $user['registration_date'];
-        echo '<br>';
-        echo '$isPasswordCorrect : ' . $isPasswordCorrect;
-        echo '<br>';
-        echo 'correctPassword' . $correctPassword;
-        echo '<br>';
-        echo $user['user_status'];
-
-        session_start();
-        $_SESSION['id'] = $user['id'];
-        $_SESSION['pseudo'] = $user['pseudo'];
-        $_SESSION['user_status'] = $user['user_status'];
-
-        setcookie('pseudo', $user['pseudo'], time() + 365*24*3600, null, null, false, true);
-        setcookie('mail', $mail, time() + 365*24*3600, null, null, false, true);
-        setcookie('password', $user['password'], time() + 365*24*3600, null, null, false, true);
-        setcookie('user_status', $user['user_status'], time() + 365*24*3600, null, null, false, true);
-        echo $_COOKIE['mail'] . '<br>';
-        echo $_COOKIE['pseudo'] . '<br>';
-        echo $_COOKIE['password'] . '<br>';
-        echo $_COOKIE['user_status'] . '<br>';
-
-
-
-
-
-        $eventsManager = new EventsManager();
-        $events = $eventsManager->getEvents();
-
-        require('view/member/events.php');
+    if (isset($_COOKIE['pseudo'])) {
+        if ($_COOKIE['password'] == $user['password']) {
+            session_start();
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['pseudo'] = $user['pseudo'];
+            $_SESSION['mail'] = $user['mail'];
+            header('Location: index.php?action=listEvents');
+        } else {
+            echo 'Mauvais identifiant ou mot de passe';
+            setcookie('pseudo', '');
+            setcookie('password', '');
+            setcookie('user_status', '');
+            header('Location: index.php?action=login');
+        }
     } else {
-        $errorMessage = 'Mauvais identifiant ou mot de passe';
-        throw new Exception('Mauvais identifiant ou mot de passe');
-        header('Location: index.php?action=login');
+
+
+
+        $isPasswordCorrect = password_verify($password, $user['password']);
+
+        $correctPassword = isset($isPasswordCorrect);
+
+        if ($isPasswordCorrect) {
+            echo $mail;
+            echo '<br>';
+            echo $password;
+            echo '<br>';
+            echo $stayConnect;
+            echo '<br>';
+            echo $user['id'];
+            echo '<br>';
+            echo $user['pseudo'];
+            echo '<br>';
+            echo $user['password'];
+            echo '<br>';
+            echo $user['mail'];
+            echo '<br>';
+            echo $user['registration_date'];
+            echo '<br>';
+            echo '$isPasswordCorrect : ' . $isPasswordCorrect;
+            echo '<br>';
+            echo 'correctPassword' . $correctPassword;
+            echo '<br>';
+            echo $user['user_status'];
+
+            session_start();
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['pseudo'] = $user['pseudo'];
+            $_SESSION['user_status'] = $user['user_status'];
+
+            setcookie('pseudo', $user['pseudo'], time() + 365*24*3600, null, null, false, true);
+            setcookie('mail', $mail, time() + 365*24*3600, null, null, false, true);
+            setcookie('password', $user['password'], time() + 365*24*3600, null, null, false, true);
+            setcookie('user_status', $user['user_status'], time() + 365*24*3600, null, null, false, true);
+            echo $_COOKIE['mail'] . '<br>';
+            echo $_COOKIE['pseudo'] . '<br>';
+            echo $_COOKIE['password'] . '<br>';
+            echo $_COOKIE['user_status'] . '<br>';
+
+
+
+
+
+            $eventsManager = new EventsManager();
+            $events = $eventsManager->getEvents();
+
+            require('view/member/events.php');
+        } else {
+            $errorMessage = 'Mauvais identifiant ou mot de passe';
+            throw new Exception('Mauvais identifiant ou mot de passe');
+            header('Location: index.php?action=login');
+        }
     }
 }
 
 function deconnexion()
 {
+    session_start();
+    $_SESSION = array();
+    session_destroy();
     setcookie('pseudo', '');
     setcookie('password', '');
     setcookie('user_status', '');

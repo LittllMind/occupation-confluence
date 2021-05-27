@@ -5,37 +5,49 @@
 <?php
 while ($data = $events->fetch()) {
     ?>
-    <div class="news">
-        <div class="news-top">
-          <strong>
-            <h3>
 
-            </h3>
-          </strong>
+    <div class="events">
+      <div class="events-top">
+        <form action="index.php?action=addEvent" method="post">
+            <div class="form-group">
+                <label for="title">Titre de l'evenement</label><br />
+                <input class="form-control" type="text" id="title" name="title" />
+            </div>
+            <div class="form-group">
+                <label for="content">Description</label><br />
+                <textarea class="form-control" id="content" name="content"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date">Date prévue</label><br />
+                <input class="form-control" type="date" id="date" name="date"></input>
+            </div>
+            <div>
+                <button class="btn btn-success" type="submit"> Valider </button>
+            </div>
+        </form>
+      </div>
+    </div>
+    <div class="event">
+        <div class="event-top">
+
+          <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">modifier l'evennement
+          </a>
+          <div class="post-content">
+            <?= htmlspecialchars($data['id']); ?>
+            <br>
+            <?= htmlspecialchars($data['title']); ?>
+            <br>
+            <?= htmlspecialchars($data['content']); ?>
+            <br>
+            <?= htmlspecialchars($data['creation_date']); ?>
+            <br>
+            <?= htmlspecialchars($data['modified_date']); ?>
+            <br>
+          </div>
         </div>
-        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">modifier l'evennement
-        </a>
-        <div class="post-content">
-          <?= htmlspecialchars($data['id']); ?>
-          <br>
-          <?= htmlspecialchars($data['title']); ?>
-          <br>
-          <?= htmlspecialchars($data['content']); ?>
-          <br>
-          <?= htmlspecialchars($data['creation_date']); ?>
-          <br>
-          <?= htmlspecialchars($data['modified_date']); ?>
-          <br>
-
-
-        </div>
-        <div class="news-footer">
+        <div class="event-footer">
           <em>Créé le <?= $data['creation_date']; ?></em>
-          <br>
           <em>Modifié le <?= $data['modified_date']; ?></em>
-
-          <em>  </em>
-
         </div>
 
     </div>
