@@ -6,7 +6,7 @@
   <head>
       <meta charset="UTF-8">
       <title><?= $title ?></title>
-      <link  rel="stylesheet" type="text/css" href="style.css"/>
+      <link  rel="stylesheet" type="text/css" href="member.css"/>
       <!-- <link  rel="stylesheet" type="text/css" href="<?php $style ?>"/> -->
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

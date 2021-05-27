@@ -129,6 +129,14 @@ try {
                 throw new Exception('Erreur : tous les champs ne sont pas remplis !');
             }
             break;
+        case 'addEvent':
+            if (!empty($_POST['created']) && !empty($_POST['title']) && !empty($_POST['content'])) {
+                addEvent($_POST['created'], $_POST['title'], $_POST['content']);
+            } else {
+                $errorMessage = 'Tous les champs ne sont pas remplis';
+                throw new Exception('Erreur : tous les champs ne sont pas remplis !');
+            }
+            break;
         default:
             index();
     }

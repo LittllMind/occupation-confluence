@@ -10,14 +10,28 @@ class EventsManager extends BddManager
         $bdd = $this->dbConnect();
         $req = $bdd->query(
             'SELECT id, title, content, DATE_FORMAT(created, \'%d/%m/%Y\')
-            AS creation_date,
-            DATE_FORMAT(modified, \'%d/%m/%Y\')
-            AS modified_date
+            AS creation_date_fr
             FROM events
-            ORDER BY creation_date DESC'
+            ORDER BY creation_date_fr DESC'
         );
 
         return $req;
+    }
+
+    public function postEvent($created, $title, $content)
+    {
+        $status = 'created';
+
+        $bdd = $this->dbConnect();
+        $comments = $bdd->prepare(
+            'INSERT INTO billets(title, content, created, status)
+            VALUES (?, ?, ?, ?, ?)'
+        );
+
+    
+        $affectedLines = $comments->execute(array($title, $content, $created, $status));
+    
+        return $affectedLines;
     }
     //
     // public function getPost($postId)
@@ -35,16 +49,4 @@ class EventsManager extends BddManager
     //     return $post;
     // }
     //
-    // public function postBlog($title, $content, $image_url, $creation_date)
-    // {
-    //     $bdd = $this->dbConnect();
-    //     $comments = $bdd->prepare(
-    //         'INSERT INTO billets(title, content, image_url, creation_date)
-    //         VALUES (?, ?, ?, ?)'
-    //     );
-    //
-    //     $affectedLines = $comments->execute(array($title, $content, $image_url, $creation_date));
-    //
-    //     return $affectedLines;
-    // }
 }

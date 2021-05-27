@@ -131,6 +131,9 @@ function deconnexion()
 
 }
 
+
+// ------------------------ E V E N T S ------------------
+
 function listEvents()
 {
     $eventManager = new EventsManager();
@@ -140,7 +143,21 @@ function listEvents()
     require('view/member/events.php');
 }
 
-// ------------------------ LIST VIEW
+
+function addEvent($created, $title, $content)
+{
+    $eventManager = new EventsManager();
+
+    $affectedLines = $eventManager->postEvent($created, $title, $content);
+
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter le post !');
+    } else {
+        header('Location: index.php?action=events');
+    }
+}
+
+// ------------------------ LIST VIEW ----------------
 
 function listUser()
 {

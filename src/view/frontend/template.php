@@ -5,7 +5,7 @@
       <meta charset="UTF-8">
       <title><?= $title ?></title>
       <?php $style="assets/css/style.css"; ?>
-      <link  rel="stylesheet" type="text/css" href="view/frontend/template.css"/>
+      <link  rel="stylesheet" type="text/css" href="assets/css/style.css"/>
       <!-- <link  rel="stylesheet" type="text/css" href="<?php $style ?>"/> -->
       <!-- <link  rel="stylesheet" type="text/css" href="assets/css/style.css"/> -->
       <!-- <link href="assets/css/styles.php" rel="stylesheet" type="text/css" media="all" /> -->
