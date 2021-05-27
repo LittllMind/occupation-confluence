@@ -37,25 +37,15 @@
 }
 
 
+/*---------------------- ? ? ?  ----------------*/
 
-body
+#youtubeNational
 {
-    /* background-color: #B0C0BC; */
-}
-
-.container
-{
-    /* display: flex; */
-    justify-content: center;
-    /* background-color: #B0C0BC; */
-    width: 100%;
-}
-
-.row
-{
-    justify-content: center;
-    /* background-color: #B0C0BC; */
-
+  font-family: "aliensCows";
+  color: #DA3022;
+  padding: 1.5%;
+  font-size: 2em;
+  padding-right: 2%;
 }
 
 .main-home
@@ -65,6 +55,74 @@ body
     height: 1000px;
     justify-content: center;
 }
+
+body
+{
+    /* background-color: #B0C0BC; */
+}
+
+.container
+{
+    justify-content: center;
+    width: 100%;
+}
+
+.row
+{
+    justify-content: center;
+
+}
+
+/*---------------------- E V E N T S ----------------*/
+
+
+
+/*---------------------- N A V B A R ----------------*/
+
+.navbar
+{
+    display: grid;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('../images/Occupation-cropped.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 600px;
+
+}
+
+
+.navbar-links
+{
+    height: 10%;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.navbar-links a
+{
+    font-family: "aliensCows";
+    color: #DA3022;
+    padding: 1.5%;
+    font-size: 2em;
+    padding-right: 2%;
+}
+
+
+.navbar-button
+{
+    color: #2E2D2D;
+    display: flex;
+    background-color: #191A1A;
+    justify-content: space-around;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+/*---------------------- M A N I F E S T ----------------*/
+
 
 .manifest
 {
@@ -104,9 +162,9 @@ body
 
 .manifest li
 {
-  background-color: #E6EFE9;
-
+    background-color: #E6EFE9;
 }
+
 
 .chapeau
 {
@@ -116,53 +174,8 @@ body
   margin-top: 10%;
 }
 
-.navbar
-{
-    display: grid;
-    /* background-color: #35588E; */
-    justify-content: center;
-    flex-direction: column;
+/*---------------------- N E W S  ----------------*/
 
-    background-image: url('../images/Occupation-cropped.jpeg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 600px;
-
-}
-
-
-.navbar-links
-{
-    height: 10%;
-    justify-content: space-between;
-    width: 100%;
-}
-
-
-.navbar-links a
-{
-    font-family: "aliensCows";
-    color: #DA3022;
-    padding: 1.5%;
-    font-size: 2em;
-    padding-right: 2%;
-}
-
-.posts-list
-{
-    color: #2E2D2D;
-    display: flex;
-    background-color: #191A1A;
-    justify-content: space-around;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-
-h1
-{
-    text-align:center;
-}
 
 .news-top
 {
@@ -179,18 +192,9 @@ h1
 
 .news-top h3
 {
-  /* font-size: 4.5em; */
+    font-size: 4.5em;
 
 }
-
-
-#occuppons-partout
-{
-    align-content: center;
-    margin: auto;
-    width: 80%;
-}
-
 
 .news img
 {
@@ -203,22 +207,35 @@ h1
     margin-top:0px;
 }
 
-.post-content {
-    display: flex;
+
+.news-top
+{
+    color: #191A1A;
+    /* font-size: 4.5em; */
+    padding: 0.01%;
+    width: 100%;
+    border-radius: 10px 10px 10px 10px;
+    margin: 1%;
+    font-family: "aliensCows";
+    padding: 0.5%;
+}
+
+
+.news-top h3
+{
+    font-size: 4.5em;
+
+}
+
+.news img
+{
+    justify-content: middle;
     width: 100%;
 }
 
-.post-content img
+.news p
 {
-    width: 30%;
-}
-
-.post-content p
-{
-    width: 100%;
-    text-align: center;
-    padding: 1%;
-    height: 100%;
+    margin-top:0px;
 }
 
 .news
@@ -240,10 +257,117 @@ h1
 
 }
 
+/*---------------------- P O S T  ----------------*/
+
+.posts-list
+{
+    color: #2E2D2D;
+    display: flex;
+    background-color: #191A1A;
+    justify-content: space-around;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+h1
+{
+    text-align:center;
+}
+
+
+.posts-list
+{
+    color: #2E2D2D;
+    display: flex;
+    background-color: #191A1A;
+    justify-content: space-around;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+h1
+{
+    text-align:center;
+}
+
+
+.post-content {
+    display: flex;
+    width: 100%;
+}
+
+.post-content img
+{
+    width: 30%;
+}
+
+.post-content p
+{
+    width: 100%;
+    text-align: center;
+    padding: 1%;
+    height: 100%;
+}
+
+
+/*---------------------- G O L D   B O O K  ----------------*/
+
+#goldenBook
+{
+    height: 70%;
+    padding: 1%
+}
+
+.gold-book-top h3
+{
+    font-size: 4.5em;
+}
+
+.gold-book
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:70%;
+    margin:auto;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 1%;
+    font-size: 1.2em;
+}
+
+.gold-book
+{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: grey solid 2px;
+
+}
+
+.gold-book-content p
+{
+    width: 100%;
+    text-align: left;
+    padding: 1%;
+    height: 100%;
+}
+
+
+/*---------------------- G A L E R I E  ----------------*/
+
 .galerie
 {
     padding: 2%;
+    align-content: center;
 }
+
+#occupons-partout
+{
+    margin: auto;
+    width: 60%;
+}
+
+/*---------------------- F O O T E R ----------------*/
+
 
 footer
 {
@@ -262,7 +386,7 @@ footer
   color: #E6EFE9;
 }
 
-.footer a
+.footer img
 {
     margin-bottom: 1%;
 }

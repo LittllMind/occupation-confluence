@@ -6,8 +6,8 @@
 while ($data = $events->fetch()) {
     ?>
 
-    <div class="events">
-      <div class="events-top">
+    <div class="event-form">
+      <div class="event-form-top">
         <form action="index.php?action=addEvent" method="post">
             <div class="form-group">
                 <label for="title">Titre de l'evenement</label><br />
@@ -25,11 +25,15 @@ while ($data = $events->fetch()) {
                 <button class="btn btn-success" type="submit"> Valider </button>
             </div>
         </form>
+        <div class="event-form-footer">
+          <em>Créé le <?= $data['creation_date']; ?></em>
+          <em>Modifié le <?= $data['modified_date']; ?></em>
+        </div>
       </div>
     </div>
+
     <div class="event">
         <div class="event-top">
-
           <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">modifier l'evennement
           </a>
           <div class="post-content">
@@ -45,11 +49,11 @@ while ($data = $events->fetch()) {
             <br>
           </div>
         </div>
+
         <div class="event-footer">
           <em>Créé le <?= $data['creation_date']; ?></em>
           <em>Modifié le <?= $data['modified_date']; ?></em>
         </div>
-
     </div>
 
     <?php

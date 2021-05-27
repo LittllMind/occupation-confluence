@@ -1,11 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
   <head>
       <meta charset="UTF-8">
       <title><?= $title ?></title>
-      <link  rel="stylesheet" type="text/css" href="style.css"/>
+      <?php $style="assets/css/style.css"; ?>
+      <link  rel="stylesheet" type="text/css" href="view/frontend/template.css"/>
+      <!-- <link  rel="stylesheet" type="text/css" href="<?php $style ?>"/> -->
+      <!-- <link  rel="stylesheet" type="text/css" href="assets/css/style.css"/> -->
+      <!-- <link href="assets/css/styles.php" rel="stylesheet" type="text/css" media="all" /> -->
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
       <link
@@ -23,9 +26,7 @@
 
   </head>
 
-
   <body>
-
 
       <div class="navbar">
         <picture>
@@ -33,13 +34,10 @@
           <source srcset="assets/images/logo-occupation.jpg" type="image/jpg"  style:"padding: auto">
           <img src="assets/images/logo-occupation.jpg">
         </picture>
-
-
-
       </div>
 
       <div class="navbar-links">
-        <div class="posts-list">
+        <div class="navbar-button">
             <button type="button" name="button" class="btn"> <a href="index.php?action=index">MANIFEST</a>  </button>
             <button type="button" name="button" class="btn"> <a href="index.php?action=listPosts">MEDIAS</a>  </button>
             <button type="button" name="button" class="btn"> <a href="index.php?action=listSound">WEBRADIO</a>  </button>
@@ -49,15 +47,15 @@
             <a href="https://www.youtube.com/channel/UC9KJ1P51PpecIQuTXeH4pRg" target="_blank" class="btn-social btn-youtube"><i class="fa fa-youtube"></i></a>
             <a href="http://www.facebook.com/occupationoperaconfluence/" target="_blank" class="btn-social btn-facebook"><i class="fa fa-facebook"></i></a>
             <a href="index.php?action=listGoldBook"><img style="height: 70%; padding: 1%" id="goldenBook" src="assets/images/book.svg" alt="Livre d'or"></a>
+        </div>
       </div>
 
-
-      </div>
       <div class="container">
         <div class="row">
           <?= $content ?>
         </div>
       </div>
+
       <footer>
         <div class="footer">
           <img id="occupation-opera-confluence-QR" src="assets/images/occupation-confluence-QR.png" alt="Occupons partout">
@@ -71,7 +69,7 @@
           </strong>
           <h4>Ce que nous défendons, nous le défendons pour tous.tes</h4>
         </div>
-
       </footer>
+
   </body>
 </hmtl>
