@@ -20,12 +20,12 @@ class EventsManager extends BddManager
 
     public function postEvent($created, $title, $content)
     {
-        $status = 'created';
+        $status = 1;
 
         $bdd = $this->dbConnect();
         $comments = $bdd->prepare(
-            'INSERT INTO billets(title, content, created, status)
-            VALUES (?, ?, ?, ?, ?)'
+            'INSERT INTO events(title, content, created, status)
+            VALUES (?, ?, ?, ?)'
         );
 
     

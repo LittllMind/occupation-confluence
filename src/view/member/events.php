@@ -8,10 +8,16 @@
     <?php
 while ($data = $events->fetch()) {
     ?>
-    <form action="index.php?action=addEvent" method="post">
+    
+    <?php 
+        for ($i = 1; $i <= 7; $i++) {
+            ?>
+
+            <form action="index.php?action=addEvent" method="post">
+
                 <div class="form-group">
                     <label for="created">Date</label><br />
-                    <input type="date" class="form-control" id="creation_date" name="creation_date"></input>
+                    <input type="date" class="form-control" id="created" name="created"></input>
                 </div>
                 <div class="form-group">
                     <label for="title">titre</label><br />
@@ -24,10 +30,7 @@ while ($data = $events->fetch()) {
                 <div>
                     <button class="btn btn-success" type="submit"> Valider </button>
                 </div>
-    </form>
-    <?php 
-        for ($i = 1; $i <= 7; $i++) {
-            ?>
+            </form>
             
             <?php
             

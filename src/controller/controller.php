@@ -153,7 +153,7 @@ function addEvent($created, $title, $content)
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le post !');
     } else {
-        header('Location: index.php?action=events');
+        header('Location: index.php?action=listEvents');
     }
 }
 
