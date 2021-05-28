@@ -133,6 +133,7 @@ try {
             if (!empty($_POST['created']) && !empty($_POST['title']) && !empty($_POST['content'])) {
                 addEvent($_POST['created'], $_POST['title'], $_POST['content']);
             } else {
+                
                 echo $_POST['created'];
                 echo $_POST['title'];
                 echo $_POST['content'];

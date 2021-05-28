@@ -84,6 +84,15 @@ body
     margin: auto;
 }
 
+.events{
+    flex-direction: column;
+}
+
+.event-top
+{
+    text-align: center;
+}
+
 
 
 /*---------------------- N A V B A R ----------------*/
